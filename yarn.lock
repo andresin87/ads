@@ -1435,6 +1435,25 @@
     qs "^6.6.0"
     ts-dedent "^1.1.0"
 
+"@storybook/addon-storysource@^5.3.3":
+  version "5.3.3"
+  resolved "https://nexus.rdpnts.com/repository/npm-group/@storybook/addon-storysource/-/addon-storysource-5.3.3.tgz#3a40fc2c79064078a450ee4374ae89b3eb835566"
+  integrity sha512-9IcbrNZtbiTYvl46K/1R2plDToNLYKfzAuC6b1yy6LJJELpOIXU0984TAeCkxsQ+eTeCYyMbByG0s3trKn0QhQ==
+  dependencies:
+    "@storybook/addons" "5.3.3"
+    "@storybook/components" "5.3.3"
+    "@storybook/router" "5.3.3"
+    "@storybook/source-loader" "5.3.3"
+    "@storybook/theming" "5.3.3"
+    core-js "^3.0.1"
+    estraverse "^4.2.0"
+    loader-utils "^1.2.3"
+    prettier "^1.16.4"
+    prop-types "^15.7.2"
+    react-syntax-highlighter "^11.0.2"
+    regenerator-runtime "^0.13.3"
+    util-deprecate "^1.0.2"
+
 "@storybook/addons@5.3.3", "@storybook/addons@^5.3.3":
   version "5.3.3"
   resolved "https://nexus.rdpnts.com/repository/npm-group/@storybook/addons/-/addons-5.3.3.tgz#d1383379c27c205bd36961a5a833f1eec3850dd4"
@@ -1703,6 +1722,22 @@
     memoizerific "^1.11.3"
     qs "^6.6.0"
     util-deprecate "^1.0.2"
+
+"@storybook/source-loader@5.3.3":
+  version "5.3.3"
+  resolved "https://nexus.rdpnts.com/repository/npm-group/@storybook/source-loader/-/source-loader-5.3.3.tgz#d7ea88f804d3593d7b5f45b71a886461b3fa7c1c"
+  integrity sha512-XnwGhtV9nkZT1owGQzX6jUcz/jxNDXWPtnNwUq31RYqL+W6nWrA7K6k8dzpXfTTX5bG2stykONY9q9yIhsp86g==
+  dependencies:
+    "@storybook/addons" "5.3.3"
+    "@storybook/client-logger" "5.3.3"
+    "@storybook/csf" "0.0.1"
+    core-js "^3.0.1"
+    estraverse "^4.2.0"
+    global "^4.3.2"
+    loader-utils "^1.2.3"
+    prettier "^1.16.4"
+    prop-types "^15.7.2"
+    regenerator-runtime "^0.13.3"
 
 "@storybook/theming@5.3.3":
   version "5.3.3"
@@ -3759,7 +3794,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://nexus.rdpnts.com/repository/npm-group/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -9989,7 +10024,7 @@ prepend-http@^1.0.0:
   resolved "https://nexus.rdpnts.com/repository/npm-group/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@^1.19.1:
+prettier@^1.16.4, prettier@^1.19.1:
   version "1.19.1"
   resolved "https://nexus.rdpnts.com/repository/npm-group/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
