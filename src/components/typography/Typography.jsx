@@ -52,11 +52,19 @@ Typography.createType = (typeName, htmlElement) => ({ className, ...props }) =>
   });
 
 Typography.B = Typography.createType('b');
+Typography.Big = Typography.createType('big');
+Typography.Em = Typography.createType('em');
+Typography.H1 = Typography.createType('title1', 'h1');
+Typography.H2 = Typography.createType('title2', 'h2');
+Typography.H3 = Typography.createType('title3', 'h3');
+Typography.H4 = Typography.createType('title4', 'h4');
 Typography.Label = Typography.createType('label');
 Typography.Sup = Typography.createType('sup');
 Typography.Sub = Typography.createType('sub');
 Typography.U = Typography.createType('u');
 Typography.P = Typography.createType('p');
+Typography.S = Typography.createType('s');
+Typography.Small = Typography.createType('small');
 Typography.Q = Typography.createType('q');
 
 export default withPropTypes({

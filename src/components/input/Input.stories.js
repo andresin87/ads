@@ -1,23 +1,17 @@
-import React from "react";
-import { withKnobs, boolean, text } from '@storybook/addon-knobs'
+import React from 'react';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 
-import Input from "./Input";
+import Input from './Input';
 
 export default {
-  title: "ADS|Atom/Input",
+  title: 'ADS|Atom/Input',
 
   parameters: {
-    component: Input
-  }
+    component: Input,
+  },
 };
 
-export const standard = () => (
-  <Input
-    size="large"
-    username="Tom Coleman"
-    src="https://avatars2.githubusercontent.com/u/132554"
-  />
-);
+export const standard = () => <Input name="input" />;
 
 export const knobs = () => (
   <Input
