@@ -1,12 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import { propTypes, defaultProps } from "./Input.props";
+import { propTypes, defaultProps } from './Input.props';
 
-import withPropTypes from "../../utils/withPropTypes";
+import withPropTypes from '../../utils/withPropTypes';
+import withField from '../field/withField';
 
 const Input = props => <input {...props} />;
 
-export default withPropTypes({
-  propTypes,
-  defaultProps
-})(Input);
+export default withField(
+  withPropTypes({
+    propTypes,
+    defaultProps,
+  })(Input),
+  'Input',
+);

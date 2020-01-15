@@ -1,9 +1,10 @@
 import React from "react";
+import { withKnobs, boolean, text } from '@storybook/addon-knobs'
 
 import Input from "./Input";
 
 export default {
-  title: "ADS|Atom|Avatar",
+  title: "ADS|Atom/Input",
 
   parameters: {
     component: Input
@@ -17,3 +18,17 @@ export const standard = () => (
     src="https://avatars2.githubusercontent.com/u/132554"
   />
 );
+
+export const knobs = () => (
+  <Input
+    disabled={boolean('disabled', false)}
+    label={text('label', 'label')}
+    placeholder={text('placeholder', 'placeholder')}
+    sublabel={text('sublabel', 'sublabel')}
+    value={text('value', 'value')}
+  />
+);
+
+knobs.story = {
+  decorators: [withKnobs],
+};

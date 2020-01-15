@@ -14,6 +14,10 @@ export const propTypes = {
    */
   disabled: PropTypes.bool,
   /**
+   * Every field must have an element name.
+   */
+  elementName: PropTypes.string.isRequired,
+  /**
    * Every field must have a unique ID in order to support keyboard navigation and ARIA support.
    */
   id: PropTypes.string,
@@ -28,6 +32,6 @@ export const propTypes = {
 };
 
 export const defaultProps = {
-
+  elementName: 'default'
 };
 

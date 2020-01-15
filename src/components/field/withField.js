@@ -1,33 +1,16 @@
-import React from "react";
+import React from 'react';
 
-import Field from "./Field";
+import Field from './Field';
 
-const withField = Component => ({
-  className,
-  disabled,
-  id,
-  label,
-  sublabel,
-  ...otherProps
-}) => (
+const withField = (Component, elementName) => props => (
   <Field
     {...{
-      className,
-      disabled,
-      id,
-      label,
-      sublabel
+      ...props,
+      ...(elementName !== undefined && { elementName }),
     }}
   >
-    <Component
-      {...{
-        className,
-        disabled,
-        id,
-        label,
-        sublabel,
-        ...otherProps
-      }}
-    />
+    <Component {...props} />
   </Field>
 );
+
+export default withField;
