@@ -7,8 +7,6 @@ import SUIT from '../../utils/SUIT';
 import withPropTypes from '../../utils/withPropTypes';
 import { defaultProps, propTypes } from './Field.props';
 
-const { Sup, Sub } = Typography;
-
 const Field = ({ className, disabled, elementName, id, label, sublabel, children, ...otherProps }) => (
   <div
     {...{
@@ -41,7 +39,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
       sublabel,
     }}
   >
-    <span
+    <Typography.Label
       className={cx([
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
@@ -69,7 +67,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
       ])}
     >
       {label}
-    </span>
+    </Typography.Label>
     {cloneElement(children, {
       className: cx([
         SUIT.createComponentName({
@@ -102,7 +100,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
       sublabel,
       ...otherProps,
     })}
-    <span
+    <Typography.Label
       className={cx([
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
@@ -129,7 +127,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
       ])}
     >
       {sublabel}
-    </span>
+    </Typography.Label>
   </div>
 );
 
