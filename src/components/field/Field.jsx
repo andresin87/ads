@@ -7,7 +7,7 @@ import SUIT from '../../utils/SUIT';
 import withPropTypes from '../../utils/withPropTypes';
 import { defaultProps, propTypes } from './Field.props';
 
-const Field = ({ className, disabled, elementName, id, label, sublabel, children, ...otherProps }) => (
+const Field = ({ className, disabled, elementName, id, label, name, sublabel, children, ...otherProps }) => (
   <div
     {...{
       className: cx([
@@ -19,7 +19,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
           SUIT.createComponentName({
             namespace: SUIT_PREFIX,
             componentName: 'Field',
-            modifierName: 'disabled',
+            componentState: 'disabled',
           }),
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
@@ -29,7 +29,7 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
           SUIT.createComponentName({
             namespace: SUIT_PREFIX,
             componentName: elementName,
-            modifierName: 'disabled',
+            componentState: 'disabled',
           }),
       ]),
       disabled,
@@ -46,25 +46,13 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
           componentName: 'Field',
           descendentName: 'label',
         }),
-        disabled === true &&
-          SUIT.createComponentName({
-            namespace: SUIT_PREFIX,
-            componentName: 'Field',
-            descendentName: 'label',
-            modifierName: 'disabled',
-          }),
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
           componentName: elementName,
           descendentName: 'label',
-        }),
-        SUIT.createComponentName({
-          namespace: SUIT_PREFIX,
-          componentName: elementName,
-          descendentName: 'label',
-          modifierName: 'disabled',
         }),
       ])}
+      for={name}
     >
       {label}
     </Typography.Label>
@@ -77,20 +65,8 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
         }),
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
-          componentName: 'Field',
-          descendentName: 'element',
-          modifierName: 'disabled',
-        }),
-        SUIT.createComponentName({
-          namespace: SUIT_PREFIX,
           componentName: elementName,
           descendentName: 'element',
-        }),
-        SUIT.createComponentName({
-          namespace: SUIT_PREFIX,
-          componentName: elementName,
-          descendentName: 'element',
-          modifierName: 'disabled',
         }),
         className,
       ]),
@@ -109,20 +85,8 @@ const Field = ({ className, disabled, elementName, id, label, sublabel, children
         }),
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
-          componentName: 'Field',
-          descendentName: 'subLabel',
-          modifierName: 'disabled',
-        }),
-        SUIT.createComponentName({
-          namespace: SUIT_PREFIX,
           componentName: elementName,
           descendentName: 'subLabel',
-        }),
-        SUIT.createComponentName({
-          namespace: SUIT_PREFIX,
-          componentName: elementName,
-          descendentName: 'subLabel',
-          modifierName: 'disabled',
         }),
       ])}
     >

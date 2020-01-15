@@ -5,7 +5,7 @@ import { propTypes, defaultProps } from './Input.props';
 import withPropTypes from '../../utils/withPropTypes';
 import withField from '../field/withField';
 
-const Input = props => <input {...props} />;
+const Input = props => <input aria-label={props.name} {...props} />;
 
 export default withField(
   withPropTypes({

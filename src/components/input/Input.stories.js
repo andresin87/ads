@@ -23,6 +23,7 @@ export const knobs = () => (
   <Input
     disabled={boolean('disabled', false)}
     label={text('label', 'label')}
+    name={text('name', 'input')}
     placeholder={text('placeholder', 'placeholder')}
     sublabel={text('sublabel', 'sublabel')}
     value={text('value', 'value')}

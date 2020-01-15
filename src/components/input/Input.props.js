@@ -28,7 +28,7 @@ export const propTypes = {
   /**
    * Name of the submitted form parameter.
    */
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   /**
    * Text that will appear in an empty input.
    */
@@ -66,4 +66,6 @@ export const propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
-export const defaultProps = {};
+export const defaultProps = {
+  name: '',
+};

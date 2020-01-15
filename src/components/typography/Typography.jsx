@@ -7,7 +7,7 @@ import withPropTypes from '../../utils/withPropTypes';
 import SUIT from '../../utils/SUIT';
 import { SUIT_PREFIX } from '../../constants';
 
-const Typography = ({ className, children, htmlElement, tone, ...props }) =>
+const Typography = ({ className, children, htmlElement, tone, disabled, ...props }) =>
   createElement(
     typeof htmlElement === 'string' && htmlElement !== '' ? htmlElement : 'span',
     {
@@ -24,6 +24,12 @@ const Typography = ({ className, children, htmlElement, tone, ...props }) =>
               componentName: 'Typography',
               modifierName: tone,
             }),
+          disabled === true &&
+          SUIT.createComponentName({
+            namespace: SUIT_PREFIX,
+            componentName: 'Typography',
+            componentState: 'disabled',
+          }),
           className,
         ]),
       },
@@ -46,7 +52,7 @@ Typography.createType = (typeName, htmlElement) => ({ className, ...props }) =>
   });
 
 Typography.B = Typography.createType('b');
-Typography.Label = Typography.createType('label', 'span');
+Typography.Label = Typography.createType('label');
 Typography.Sup = Typography.createType('sup');
 Typography.Sub = Typography.createType('sub');
 Typography.U = Typography.createType('u');
