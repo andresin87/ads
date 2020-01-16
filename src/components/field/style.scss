@@ -1,47 +1,33 @@
 .ads-Field {
+  position: relative;
+  padding: var(--grid);
   display: flex;
   flex-direction: column;
+  min-height: calc(6 * var(--grid));
   > .ads-Field-label,
   > .ads-Field-subLabel {
     text-transform: capitalize;
-    font-size: .7em;
+    font-size: .8em;
+    position: absolute;
+    height: calc(2 * var(--grid));
+    line-height: 1.5;
   }
-  &--primary {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-primary);
-    }
+  > .ads-Field-label,
+  > .ads-Field-subLabel,
+  > .ads-Field-element {
+    left: var(--grid);
+    right: var(--grid);
   }
-  &--secondary {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-secondary);
-    }
+  > .ads-Field-label {
+    top: 0;
   }
-  &--warning {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-alert);
-    }
+  > .ads-Field-element {
+    position: absolute;
+    top: calc(2 * var(--grid));
+    bottom: calc(2 * var(--grid));
+    width: calc(100% - 2 * var(--grid));
   }
-  &--danger {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-error);
-    }
-  }
-  /**
-  &--info {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-error);
-    }
-  }
-  **/
-  &--success {
-    > .ads-Field-label,
-    > .ads-Field-subLabel {
-      color: var(--c-success);
-    }
+  > .ads-Field-subLabel {
+    bottom: 0;
   }
 }

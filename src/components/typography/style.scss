@@ -1,0 +1,22 @@
+.ads-Typography {
+  &--primary {
+    color: var(--c-primary);
+  }
+  &--secondary {
+    color: var(--c-secondary);
+  }
+  &--warning {
+    color: var(--c-alert);
+  }
+  &--danger {
+    color: var(--c-error);
+  }
+  /**
+  &--info {
+    color: var(--c-error);
+  }
+  **/
+  &--success {
+    color: var(--c-success);
+  }
+}

@@ -54,6 +54,7 @@ const Field = ({ className, disabled, elementName, id, label, name, tone, sublab
     }}
   >
     <Typography.Label
+      tone={tone}
       className={cx([
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,
@@ -119,6 +120,7 @@ const Field = ({ className, disabled, elementName, id, label, name, tone, sublab
       ...otherProps,
     })}
     <Typography.Label
+      tone={tone}
       className={cx([
         SUIT.createComponentName({
           namespace: SUIT_PREFIX,

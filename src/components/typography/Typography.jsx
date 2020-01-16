@@ -7,6 +7,8 @@ import withPropTypes from '../../utils/withPropTypes';
 import SUIT from '../../utils/SUIT';
 import { SUIT_PREFIX } from '../../constants';
 
+import './style.scss';
+
 const Typography = ({ className, children, htmlElement, tone, disabled, ...props }) =>
   createElement(
     typeof htmlElement === 'string' && htmlElement !== '' ? htmlElement : 'span',
