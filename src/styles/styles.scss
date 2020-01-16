@@ -1,2 +1,9 @@
 // import variables
-@import "./variables/styles";
+
+@import './variables/styles';
+
+* {
+  color: var(--c-text-base);
+  font-family: var(--ff-text-base);
+  font-size: var(--fs-medium);
+}
