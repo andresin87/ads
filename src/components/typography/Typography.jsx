@@ -25,11 +25,11 @@ const Typography = ({ className, children, htmlElement, tone, disabled, ...props
               modifierName: tone,
             }),
           disabled === true &&
-          SUIT.createComponentName({
-            namespace: SUIT_PREFIX,
-            componentName: 'Typography',
-            componentState: 'disabled',
-          }),
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'Typography',
+              componentState: 'disabled',
+            }),
           className,
         ]),
       },
@@ -39,8 +39,8 @@ const Typography = ({ className, children, htmlElement, tone, disabled, ...props
 
 Typography.createType = (typeName, htmlElement) => ({ className, ...props }) =>
   createElement(Typography, {
-    ...props,
     htmlElement: htmlElement ? htmlElement : typeName,
+    ...props,
     className: cx([
       SUIT.createComponentName({
         namespace: SUIT_PREFIX,

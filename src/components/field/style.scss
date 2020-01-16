@@ -1,0 +1,47 @@
+.ads-Field {
+  display: flex;
+  flex-direction: column;
+  > .ads-Field-label,
+  > .ads-Field-subLabel {
+    text-transform: capitalize;
+    font-size: .7em;
+  }
+  &--primary {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-primary);
+    }
+  }
+  &--secondary {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-secondary);
+    }
+  }
+  &--warning {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-alert);
+    }
+  }
+  &--danger {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-error);
+    }
+  }
+  /**
+  &--info {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-error);
+    }
+  }
+  **/
+  &--success {
+    > .ads-Field-label,
+    > .ads-Field-subLabel {
+      color: var(--c-success);
+    }
+  }
+}
