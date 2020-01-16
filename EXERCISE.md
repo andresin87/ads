@@ -27,43 +27,43 @@ It's made of 2 parts:
 These are the different characteristics of it:
 
 - Form field:
-	- It must have a placeholder text "select a date"
-	- After date selection the input value has to show the selected date
+	- [ ] It must have a placeholder text "select a date"
+	- [ ] After date selection the input value has to show the selected date
 - Popover:
-	- It has to show 1 month at a time
-	- Arrows to navigate from one month to the other
-	- Days of the week from Sunday to Saturday
-	- it's only possible to select one date at a time (no ranges are needed for this test)
-	- The number of rows will depend on the month, but the height of the popover must always be the same.
+	- [ ] It has to show 1 month at a time
+	- [ ] Arrows to navigate from one month to the other
+	- [ ] Days of the week from Sunday to Saturday
+	- [ ] It's only possible to select one date at a time (no ranges are needed for this test)
+	- [ ] The number of rows will depend on the month, but the height of the popover must always be the same.
 
 ## Behaviour
 
-- The popover with the calendar must be initially closed.
-- In order to show the calendar, the user has to click on the text field.
-- Once a date is selected the calendar has to hide (little delay of 0.5s).
-- The date selected must be shown in the field.
-- To change the month, the user has to click on the arrows on top right and left.
-- The dates can't be added manually in the form-field.
+- [ ] The popover with the calendar must be initially closed.
+- [ ] In order to show the calendar, the user has to click on the text field.
+- [ ] Once a date is selected the calendar has to hide (little delay of 0.5s).
+- [ ] The date selected must be shown in the field.
+- [ ] To change the month, the user has to click on the arrows on top right and left.
+- [ ] The dates can't be added manually in the form-field.
 
 ## Customisation
 
 The datepicker component would be used in many brands, and each of them should be able to customise the following:
 
 - Form field:
-	- Date format to be shown after selection: 2 options only
-	- Colour and width of the border: Only 2 options: none or solid 1px grey
-	- Background color: any colour is valid
-	- Font size: only 3 sizes available (S_12px M_14px or L_16px)
-	- Font colour: any color
+	- [ ] Date format to be shown after selection: 2 options only
+	- [ ] Colour and width of the border: Only 2 options: none or solid 1px grey
+	- [ ] Background color: any colour is valid
+	- [x] Font size: only 3 sizes available (S_12px M_14px or L_16px)
+	- [ ] Font colour: any color
 - Popover:
-	- Shadow: any valid CSS value is allowed
-	- Background color: any colour is valid
-	- Border: Only 2 options: none or solid 1px grey
+	- [ ] Shadow: any valid CSS value is allowed
+	- [ ] Background color: any colour is valid
+	- [ ] Border: Only 2 options: none or solid 1px grey
 - Calendar
-	- Font sizes: only 3 sizes available (S_12px M_14px or L_16px)
-	- Font colour: any color
-	- Background colour of each state: any color
-	- Shape of the selected day indicator (only 2 options circle or square)
+	- [x] Font sizes: only 3 sizes available (S_12px M_14px or L_16px)
+	- [ ] Font colour: any color
+	- [ ] Background colour of each state: any color
+	- [ ] Shape of the selected day indicator (only 2 options circle or square)
 
 **Important notes:**
 
