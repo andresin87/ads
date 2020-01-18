@@ -1,0 +1,23 @@
+@mixin column7() {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+@mixin flexCentered() {
+  display: flex;
+  vertical-align: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.ads-Calendar {
+  max-width: 360px;
+  > .ads-Calendar-weekDayNames {
+    @include column7;
+    > .ads-Calendar-weekDayName {
+      @include flexCentered;
+      text-transform: capitalize;
+    }
+  }
+}

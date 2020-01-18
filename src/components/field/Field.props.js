@@ -4,11 +4,7 @@ export const propTypes = {
   /**
    * Class names to be added to the outer container of the field.
    */
-  className: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.string,
-  ]),
+  className: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]),
   /**
    * Disables the field and prevents editing the contents.
    */
@@ -32,6 +28,5 @@ export const propTypes = {
 };
 
 export const defaultProps = {
-  elementName: 'default'
+  elementName: 'default',
 };
-

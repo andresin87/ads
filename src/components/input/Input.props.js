@@ -1,14 +1,10 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export const propTypes = {
   /**
    * Class names to be added to the outer container of the input.
    */
-  className: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-    PropTypes.string
-  ]),
+  className: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.string]),
   /**
    * This is the initial value of an uncontrolled form element.
    */
@@ -45,25 +41,25 @@ export const propTypes = {
    * The `<Input>` element includes support for all HTML5 types.
    */
   type: PropTypes.oneOf([
-    "text",
-    "password",
-    "datetime",
-    "datetime-local",
-    "date",
-    "month",
-    "time",
-    "week",
-    "number",
-    "email",
-    "url",
-    "search",
-    "tel",
-    "color"
+    'text',
+    'password',
+    'datetime',
+    'datetime-local',
+    'date',
+    'month',
+    'time',
+    'week',
+    'number',
+    'email',
+    'url',
+    'search',
+    'tel',
+    'color',
   ]),
   /**
    * The input is a controlled component, and will always display this value.
    */
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export const defaultProps = {

@@ -1,4 +1,38 @@
+@mixin title1() {
+  font-size: 2em;
+  margin-top: calc(2 * var(--grid));
+  margin-bottom: calc(1.5 * var(--grid));
+}
+@mixin title2() {
+  font-size: 1.5em;
+  margin-top: calc(1.5 * var(--grid));
+  margin-bottom: calc(1.25 * var(--grid));
+}
+@mixin title3() {
+  font-size: 1.2em;
+  margin-top: calc(1.2 * var(--grid));
+  margin-bottom: calc(1.1 * var(--grid));
+}
+@mixin title4() {
+  font-size: 1.1em;
+  margin-top: calc(1.1 * var(--grid));
+  margin-bottom: calc(1 * var(--grid));
+}
+
 .ads-Typography {
+  &.ads-Typography--title1 {
+    @include title1;
+  }
+  &.ads-Typography--title2 {
+    @include title2;
+  }
+  &.ads-Typography--title3 {
+    @include title3;
+  }
+  &.ads-Typography--title4 {
+    @include title4;
+  }
+
   &--primary {
     color: var(--c-primary);
   }
@@ -19,4 +53,24 @@
   &--success {
     color: var(--c-success);
   }
+}
+
+h1 {
+  @include title1;
+}
+h2 {
+  @include title2;
+}
+h3 {
+  @include title3;
+}
+h4 {
+  @include title4;
+}
+
+big {
+  font-size: var(--fs-big);
+}
+small {
+  font-size: var(--fs-small);
 }

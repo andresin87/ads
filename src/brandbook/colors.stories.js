@@ -170,26 +170,26 @@ export const variations = () => (
     Table of social network colors
     <table>
       <thead>
-      <tr>
-        <th>name</th>
-        <th>--c-facebook</th>
-        <th>--c-twitter</th>
-        <th>--c-google</th>
-        <th>--c-youtube</th>
-        <th>--c-whatsapp</th>
-        <th>--c-instagram</th>
-      </tr>
+        <tr>
+          <th>name</th>
+          <th>--c-facebook</th>
+          <th>--c-twitter</th>
+          <th>--c-google</th>
+          <th>--c-youtube</th>
+          <th>--c-whatsapp</th>
+          <th>--c-instagram</th>
+        </tr>
       </thead>
       <tbody>
-      <tr style={{ height: 20 }}>
-        <th></th>
-        <th style={{ backgroundColor: 'var(--c-facebook)' }}></th>
-        <th style={{ backgroundColor: 'var(--c-twitter)' }}></th>
-        <th style={{ backgroundColor: 'var(--c-google)' }}></th>
-        <th style={{ backgroundColor: 'var(--c-youtube)' }}></th>
-        <th style={{ backgroundColor: 'var(--c-whatsapp)' }}></th>
-        <th style={{ backgroundColor: 'var(--c-instagram)' }}></th>
-      </tr>
+        <tr style={{ height: 20 }}>
+          <th></th>
+          <th style={{ backgroundColor: 'var(--c-facebook)' }}></th>
+          <th style={{ backgroundColor: 'var(--c-twitter)' }}></th>
+          <th style={{ backgroundColor: 'var(--c-google)' }}></th>
+          <th style={{ backgroundColor: 'var(--c-youtube)' }}></th>
+          <th style={{ backgroundColor: 'var(--c-whatsapp)' }}></th>
+          <th style={{ backgroundColor: 'var(--c-instagram)' }}></th>
+        </tr>
       </tbody>
     </table>
   </>

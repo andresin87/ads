@@ -1,1 +1,1 @@
-export const SUIT_PREFIX = "ads";
+export const SUIT_PREFIX = 'ads';
