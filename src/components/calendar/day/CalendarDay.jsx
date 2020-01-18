@@ -6,6 +6,7 @@ import { SUIT_PREFIX } from '../../../constants';
 import withPropTypes from '../../../utils/withPropTypes';
 import { defaultProps, propTypes } from './CalendarDay.props';
 import DateUtils from '../utils/DateUtils';
+import Typography from '../../typography/Typography';
 
 import './style.scss';
 
@@ -21,7 +22,7 @@ class CalendarDay extends PureComponent {
           }),
         ])}
       >
-        {DateUtils.getters.getDate(day)}
+        <Typography>{DateUtils.getters.getDate(day)}</Typography>
       </div>
     );
   }

@@ -10,6 +10,8 @@ import withPropTypes from '../../utils/withPropTypes';
 import { SUIT_PREFIX } from '../../constants';
 import Typography from '../typography/Typography';
 
+import './style.scss';
+
 const { getDefaultLocale, registerLocale, setDefaultLocale, getLocaleName } = DateUtils.localization;
 
 class Calendar extends PureComponent {
