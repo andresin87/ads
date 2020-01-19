@@ -128,7 +128,7 @@ class Calendar extends PureComponent {
     const { locale } = this.props;
     const { date } = this.state;
     return (
-      <CalendarContextProvider {...{ value: date, locale }}>
+      <CalendarContextProvider {...{ selectedDay: date, locale }}>
         <div
           className={cx([
             SUIT.createComponentName({

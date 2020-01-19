@@ -13,7 +13,12 @@ import './style.scss';
 
 class CalendarDay extends PureComponent {
   render() {
-    const { className, day, month } = this.props;
+    const today = new Date();
+    const { className, day, month, locale, selectedDay } = this.props;
+    const localeObject = DateUtils.localization.getLocaleObject(locale);
+    const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
+    const modulus = 7;
+    const offset = DateUtils.getters.getDay(day);
     return (
       <div
         className={cx([
@@ -24,8 +29,29 @@ class CalendarDay extends PureComponent {
           SUIT.createComponentName({
             namespace: SUIT_PREFIX,
             componentName: 'CalendarDay',
-            modifierName: DateUtils.comparators.isDayInMonth(day, month) ? 'proper' : 'foreign'
+            modifierName: DateUtils.comparators.isDayInMonth(day, month) ? 'proper' : 'foreign',
           }),
+          DateUtils.comparators.isSameDay(today, day)
+            ? SUIT.createComponentName({
+                namespace: SUIT_PREFIX,
+                componentName: 'CalendarDay',
+                modifierName: 'today',
+              })
+            : '',
+          SUIT.createComponentName({
+            namespace: SUIT_PREFIX,
+            componentName: 'CalendarDay',
+            modifierName: [0, modulus - 1].includes((offset + weekStartsOn) % modulus)
+              ? 'weekendDay'
+              : 'weekDay',
+          }),
+          DateUtils.comparators.isSameDay(selectedDay, day)
+            ? SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'CalendarDay',
+              componentState: 'selected',
+            })
+            : '',
           className,
         ])}
       >

@@ -12,6 +12,7 @@ import startOfMonth from 'date-fns/startOfMonth';
 import endOfWeek from 'date-fns/endOfWeek';
 import endOfMonth from 'date-fns/endOfMonth';
 import isAfter from 'date-fns/isAfter';
+import isSameDay from 'date-fns/isSameDay';
 import addDays from 'date-fns/addDays';
 import addWeeks from 'date-fns/addWeeks';
 import addMonths from 'date-fns/addMonths';
@@ -195,6 +196,7 @@ export default class DateUtils {
 
   static comparators = {
     isEqual,
+    isSameDay,
     isDayInMonth,
     isWeekend,
     isSameMonth,

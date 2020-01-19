@@ -26,15 +26,6 @@ class CalendarWeek extends PureComponent {
           key={offset}
           day={currentDay}
           month={month}
-          className={cx([
-            SUIT.createComponentName({
-              namespace: SUIT_PREFIX,
-              componentName: 'CalendarDay',
-              modifierName: [0, modus - 1].includes((offset + weekStartsOn) % modus)
-                ? 'weekendDay'
-                : 'weekDay',
-            }),
-          ])}
         />
       );
     });
