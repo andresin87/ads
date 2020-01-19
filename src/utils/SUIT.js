@@ -27,8 +27,8 @@ export default class SUIT {
       // [<namespace>-]<ComponentName>[is-componentState]`
       return `
         ${condionalAddition(namespace !== undefined, `${namespace}${SUIT.#VAR_JOIN}`)}  
-        ${`${componentName}${SUIT.#VAR_JOIN}`}
-        ${`is${SUIT.#VAR_JOIN}${componentState}`}
+        ${`${componentName}`}
+        ${`.is${SUIT.#VAR_JOIN}${componentState}`}
       `;
     }
     // [<namespace>-]<ComponentName>[-descendentName][--modifierName]`
