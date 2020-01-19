@@ -156,11 +156,20 @@ class Calendar extends PureComponent {
     }
   };
 
+  handleOnClick = date => {
+    this.setState({ date }, () => {
+      if (this.props.handleOnClick) {
+        this.props.handleOnClick(date);
+      }
+    });
+  };
+
   render() {
     const { locale, shape } = this.props;
     const { date } = this.state;
+    const { handleOnClick } = this;
     return (
-      <CalendarContextProvider {...{ selectedDay: date, locale, shape }}>
+      <CalendarContextProvider {...{ selectedDay: date, locale, shape, handleOnClick }}>
         <div
           className={cx([
             SUIT.createComponentName({

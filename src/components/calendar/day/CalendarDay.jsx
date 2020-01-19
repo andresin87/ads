@@ -12,15 +12,21 @@ import Typography from '../../typography/Typography';
 import './style.scss';
 
 class CalendarDay extends PureComponent {
+  handleClick = event => {
+    if (this.props.onClick) {
+      this.props.onClick(event);
+    }
+  };
   render() {
     const today = new Date();
-    const { className, day, month, locale, selectedDay, shape } = this.props;
+    const { className, day, month, locale, selectedDay, shape, handleOnClick } = this.props;
     const localeObject = DateUtils.localization.getLocaleObject(locale);
     const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
     const modulus = 7;
     const offset = DateUtils.getters.getDay(day);
     return (
       <div
+        onClick={() => handleOnClick(day)}
         className={cx([
           SUIT.createComponentName({
             namespace: SUIT_PREFIX,
@@ -72,14 +78,13 @@ const CalendarDayTyped = withPropTypes({
 })(CalendarDay);
 
 export const ConnectedCalendarDay = mapWithCalendarContextConsumer(
-  ({ locale, selectedDay, shape }, ownProps) => {
-    return ({
-      ...ownProps,
-      ...(ownProps.locale === undefined && { locale }),
-      selectedDay,
-      shape,
-    })
-  },
+  ({ locale, selectedDay, shape, handleOnClick }, ownProps) => ({
+    ...ownProps,
+    ...(ownProps.locale === undefined && { locale }),
+    handleOnClick,
+    selectedDay,
+    shape,
+  }),
 )(CalendarDayTyped);
 
 export default CalendarDayTyped;
