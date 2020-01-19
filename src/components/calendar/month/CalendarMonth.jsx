@@ -13,12 +13,13 @@ import './style.scss';
 
 class CalendarMonth extends PureComponent {
   renderWeeks = () => {
-    const { day, locale, peekNextMonth, format } = this.props;
+    const { day, locale, format } = this.props;
     const weeks = [];
     let currentDay = DateUtils.getters.getStartOfMonth(day);
     let i = 0;
     let breakAfterNextPush = false;
     while (true) {
+      if (breakAfterNextPush) break;
       weeks.push(
         <ConnectedCalendarWeek
           key={i}
@@ -28,19 +29,14 @@ class CalendarMonth extends PureComponent {
           format={format}
         />,
       );
-      if (breakAfterNextPush) break;
       i++;
       currentDay = DateUtils.addition.addWeeks(currentDay, 1);
       // If one of these conditions is true, we will either break on this week
       // or break on the next week
-      const isOutOfMonth = !DateUtils.comparators.isWeekInMonth(currentDay, day);
+      const isOutOfMonth = !DateUtils.comparators.isWeekInMonth(currentDay, day, locale);
 
       if (isOutOfMonth) {
-        if (peekNextMonth) {
-          breakAfterNextPush = true;
-        } else {
-          break;
-        }
+        breakAfterNextPush = true;
       }
     }
     return weeks;
@@ -69,6 +65,13 @@ const CalendarMonthTyped = withPropTypes({
   defaultProps,
 })(CalendarMonth);
 
-export const ConnectedCalendarMonth = mapWithCalendarContextConsumer()(CalendarMonthTyped);
+export const ConnectedCalendarMonth = mapWithCalendarContextConsumer(
+  ({ selectedDay, locale, ...otherContextProps }, ownProps) => ({
+    day: selectedDay,
+    ...ownProps,
+    ...otherContextProps,
+    locale: ownProps.locale !== undefined ? ownProps.locale : locale,
+  }),
+)(CalendarMonthTyped);
 
 export default CalendarMonthTyped;

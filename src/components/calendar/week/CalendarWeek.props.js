@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import DateUtils from '../utils/DateUtils';
 
 export const propTypes = {
   /**
@@ -13,5 +14,6 @@ export const propTypes = {
 
 export const defaultProps = {
   day: new Date(),
+  month: DateUtils.getters.getMonth(new Date()),
   format: 'yyyy-MM-dd',
 };

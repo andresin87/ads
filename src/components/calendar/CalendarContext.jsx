@@ -1,5 +1,4 @@
 import React, { createContext } from 'react';
-import { Tabs as AntTabs } from 'antd';
 
 const CalendarContext = createContext({
   day: new Date(),
@@ -13,18 +12,20 @@ export const CalendarContextProvider = ({ children, ...otherProps }) => (
 export const CalendarContextConsumer = CalendarContext.Consumer;
 
 export const mapWithCalendarContextConsumer = (
-  propsMapper = (contextProps, ownProps) => {
-    const { locale, ...otherContextProps } = contextProps;
+  propsMapper = (props, ownProps) => {
+    const { locale, selectedDay } = props;
     return {
-      ...ownProps,
-      ...otherContextProps,
+      ...props,
+      selectedDay,
       ...(ownProps.locale === undefined && { locale }),
     };
   },
-) => Component => ownProps => (
-  <CalendarContextConsumer>
-    {contextProps => React.createElement(Component, propsMapper(contextProps, ownProps))}
-  </CalendarContextConsumer>
-);
+) => Component => ownProps => {
+  return (
+    <CalendarContextConsumer>
+      {derivedProps => React.createElement(Component, propsMapper(derivedProps, ownProps))}
+    </CalendarContextConsumer>
+  );
+};
 
 export default CalendarContext;

@@ -24,7 +24,15 @@ export const propTypes = {
   /**
    * Triggered every time the calendar changes the visible month if function value is given.
    */
-  onMonthChange: PropTypes.func
+  onMonthChange: PropTypes.func,
+  /**
+   *
+   */
+  onSelect: PropTypes.func,
+  /**
+   *
+   */
+  onChange: PropTypes.func,
 };
 
 export const defaultProps = {

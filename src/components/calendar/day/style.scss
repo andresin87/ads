@@ -9,6 +9,8 @@
 
 .ads-CalendarDay {
   @include flexCentered;
+  color: var(--calendar-fc);
+  background-color: var(--calendar-bc);
   height: calc(5 * var(--grid));
   &.ads-CalendarDay--proper {
   }
@@ -16,15 +18,15 @@
     opacity: 0.2;
   }
   &.is-selected {
-    background-color: var(--c-primary);
+    background-color: var(--calendar-bc-selected);
     .ads-Typography {
-      color: var(--c-white);
+      color: var(--calendar-fc-selected);
     }
-  }
-  &.ads-CalendarDay--circle {
-    @include shape-circle;
-  }
-  &.ads-CalendarDay--square {
-    @include shape-square;
+    &.ads-CalendarDay--circle {
+      @include shape-circle;
+    }
+    &.ads-CalendarDay--square {
+      @include shape-square;
+    }
   }
 }

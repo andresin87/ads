@@ -63,7 +63,7 @@ The datepicker component would be used in many brands, and each of them should b
 	- [x] Font sizes: only 3 sizes available (S_12px M_14px or L_16px)
 	- [ ] Font colour: any color
 	- [ ] Background colour of each state: any color
-	- [ ] Shape of the selected day indicator (only 2 options circle or square)
+	- [/] Shape of the selected day indicator (only 2 options circle or square)
 
 **Important notes:**
 

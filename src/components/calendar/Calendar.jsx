@@ -141,7 +141,6 @@ class Calendar extends PureComponent {
       () => this.handleMonthChange(this.state.date),
     );
   };
-
   decreaseMonth = () => {
     this.setState(
       ({ date }) => ({

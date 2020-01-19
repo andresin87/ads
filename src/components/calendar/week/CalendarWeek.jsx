@@ -16,18 +16,10 @@ class CalendarWeek extends PureComponent {
   renderDays = () => {
     const { day, month, locale } = this.props;
     const startOfWeek = DateUtils.getters.getStartOfWeek(day, locale);
-    const localeObject = DateUtils.localization.getLocaleObject(locale);
-    const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
-    const modus = 7;
-    return range(modus).map(offset => {
+    const modulus = 7;
+    return range(modulus).map(offset => {
       const currentDay = DateUtils.addition.addDays(startOfWeek, offset);
-      return (
-        <ConnectedCalendarDay
-          key={offset}
-          day={currentDay}
-          month={month}
-        />
-      );
+      return <ConnectedCalendarDay key={offset} day={currentDay} month={month} />;
     });
   };
   render() {
@@ -51,6 +43,16 @@ const CalendarWeekTyped = withPropTypes({
   defaultProps,
 })(CalendarWeek);
 
-export const ConnectedCalendarWeek = mapWithCalendarContextConsumer()(CalendarWeekTyped);
+export const ConnectedCalendarWeek = mapWithCalendarContextConsumer((derivedProps, ownProps) => ({
+  ...ownProps,
+  ...derivedProps,
+  day:
+    ownProps.day !== undefined
+      ? ownProps.day
+      : derivedProps.selectedDay !== undefined
+      ? derivedProps.selectedDay
+      : derivedProps.day,
+  locale: ownProps.locale !== undefined ? ownProps.locale : derivedProps.locale,
+}))(CalendarWeekTyped);
 
 export default CalendarWeekTyped;

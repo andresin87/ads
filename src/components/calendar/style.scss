@@ -20,6 +20,7 @@
   height: var(--calendar-h);
   > * {
     @include noselect;
+    color: var(--calendar-fc);
   }
   > .ads-Calendar-header {
     > .ads-Calendar-monthArea {

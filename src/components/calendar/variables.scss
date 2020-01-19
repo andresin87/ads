@@ -1,7 +1,11 @@
 :root {
   --calendar-h-row: calc(5 * var(--grid));
   --calendar-w: calc(40 * var(--grid));
-  --calendar-h: calc(7 * var(--calendar-h-row));
+  --calendar-h: calc(8 * var(--calendar-h-row));
+  --calendar-fc: var(--c-text-base); // calendar font color
+  --calendar-fc-selected: var(--c-dark-white); // calendar font color selected
+  --calendar-bc: var(--c-dark-white); // calendar background color
+  --calendar-bc-selected: var(--c-primary); // calendar  background color selected
   --calendar-border-radius-shape-square: 0;
   --calendar-border-radius-shape-circle: calc(5 * var(--grid) / 2);
 }

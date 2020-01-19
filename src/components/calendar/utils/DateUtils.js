@@ -20,7 +20,7 @@ import addYears from 'date-fns/addYears';
 import toDate from 'date-fns/toDate';
 import parseISO from 'date-fns/parseISO';
 import isBefore from 'date-fns/isBefore';
-import subMonths from "date-fns/subMonths";
+import subMonths from 'date-fns/subMonths';
 
 // ** Date "Reflection" **
 const isValid = date => {
@@ -30,7 +30,11 @@ const isValid = date => {
 // ** Date Constructors **
 
 const newDate = value => {
-  const d = value ? (typeof value === 'string' || value instanceof String ? parseISO(value) : toDate(value)) : new Date();
+  const d = value
+    ? typeof value === 'string' || value instanceof String
+      ? parseISO(value)
+      : toDate(value)
+    : new Date();
   return isValid(d) ? d : null;
 };
 
@@ -72,7 +76,9 @@ const getLocaleName = ({
   extensions, // iana.org
 }) => {
   const setParameter = param => (param !== undefined ? `-${param}` : '');
-  return `${languageCode}${setParameter(scriptCode)}${setParameter(countryCode)}${setParameter(variant)}${setParameter(extensions)}`;
+  return `${languageCode}${setParameter(scriptCode)}${setParameter(countryCode)}${setParameter(
+    variant,
+  )}${setParameter(extensions)}`;
 };
 
 const registerLocale = (localeName, localeData) => {
@@ -151,9 +157,9 @@ const isDayInMonth = (currentDay, month) => {
   return getMonth(currentDay) === month;
 };
 
-const isWeekInMonth = (currentDay, day) => {
-  const startOfWeek = getStartOfWeek(currentDay);
-  const endOfWeek = getEndOfWeek(currentDay);
+const isWeekInMonth = (currentDay, day, locale) => {
+  const startOfWeek = getStartOfWeek(currentDay, locale);
+  const endOfWeek = getEndOfWeek(currentDay, locale);
   return isSameMonth(startOfWeek, day) || isSameMonth(endOfWeek, day);
 };
 
