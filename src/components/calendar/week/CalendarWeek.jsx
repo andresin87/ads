@@ -5,7 +5,7 @@ import SUIT from '../../../utils/SUIT';
 import { SUIT_PREFIX } from '../../../constants';
 import DateUtils from '../utils/DateUtils';
 import CalendarDay from '../day/CalendarDay';
-import { defaultProps, propTypes } from './CalendarWeek.props'
+import { defaultProps, propTypes } from './CalendarWeek.props';
 
 import './style.scss';
 import withPropTypes from '../../../utils/withPropTypes';
@@ -15,10 +15,26 @@ class CalendarWeek extends PureComponent {
   renderDays = () => {
     const { day, month, locale } = this.props;
     const startOfWeek = DateUtils.getters.getStartOfWeek(day, locale);
-    return range(7).map(offset => {
-        const currentDay = DateUtils.addition.addDays(startOfWeek, offset);
-        return <CalendarDay key={offset} day={currentDay} month={month} />;
-      });
+    const localeObject = DateUtils.localization.getLocaleObject(locale);
+    const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
+    const modus = 7;
+    return range(modus).map(offset => {
+      const currentDay = DateUtils.addition.addDays(startOfWeek, offset);
+      return (
+        <CalendarDay
+          key={offset}
+          day={currentDay}
+          month={month}
+          className={cx([
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'CalendarDay',
+              modifierName: [0, modus - 1].includes((offset + weekStartsOn) % modus) ? 'weekendDay' : 'weekDay',
+            }),
+          ])}
+        />
+      );
+    });
   };
   render() {
     return (

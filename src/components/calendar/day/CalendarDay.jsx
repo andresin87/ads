@@ -12,7 +12,7 @@ import './style.scss';
 
 class CalendarDay extends PureComponent {
   render() {
-    const { day } = this.props;
+    const { className, day, month } = this.props;
     return (
       <div
         className={cx([
@@ -20,6 +20,12 @@ class CalendarDay extends PureComponent {
             namespace: SUIT_PREFIX,
             componentName: 'CalendarDay',
           }),
+          SUIT.createComponentName({
+            namespace: SUIT_PREFIX,
+            componentName: 'CalendarDay',
+            modifierName: DateUtils.comparators.isDayInMonth(day, month) ? 'proper' : 'foreign'
+          }),
+          className,
         ])}
       >
         <Typography>{DateUtils.getters.getDate(day)}</Typography>

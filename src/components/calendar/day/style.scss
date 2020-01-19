@@ -2,4 +2,9 @@
 
 .ads-CalendarDay {
   @include flexCentered;
+  height: calc(5 * var(--grid));
+  &.ads-CalendarDay--proper {}
+  &.ads-CalendarDay--foreign {
+    opacity: .7;
+  }
 }

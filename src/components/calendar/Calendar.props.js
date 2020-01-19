@@ -6,6 +6,10 @@ export const propTypes = {
    */
   day: PropTypes.instanceOf(Date).isRequired,
   /**
+   *
+   */
+  dateFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  /**
    *  The format of the Week days
    */
   formatWeekDay: PropTypes.func,
@@ -16,6 +20,7 @@ export const propTypes = {
 };
 
 export const defaultProps = {
+  dateFormat: 'LLLL yyyy',
   day: new Date(),
   format: 'yyyy-MM-dd',
   formatWeekDay: (day = '') => day.substring(0, 3),

@@ -103,7 +103,7 @@ const getLocaleObject = localeSpec => {
 };
 
 const getFormattedWeekdayInLocale = (date, formatFunc, locale) => {
-  return formatFunc(formatDate(date, "EEEE", locale));
+  return formatFunc(formatDate(date, 'EEEE', locale));
 };
 
 // *** Start of ***
@@ -129,12 +129,24 @@ const isEqual = (date1, date2) => {
   }
 };
 
+const isWeekend = (date, locale) => {
+  const modulus = 7;
+  const day = getDay(date);
+  const localeObject = DateUtils.localization.getLocaleObject(locale);
+  const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
+  return [0, modulus - 1].includes((day + weekStartsOn) % modulus);
+};
+
 const isSameMonth = (date1, date2) => {
   if (date1 && date2) {
     return dfIsSameMonth(date1, date2);
   } else {
     return !date1 && !date2;
   }
+};
+
+const isDayInMonth = (currentDay, month) => {
+  return getMonth(currentDay) === month;
 };
 
 const isWeekInMonth = (currentDay, day) => {
@@ -183,6 +195,8 @@ export default class DateUtils {
 
   static comparators = {
     isEqual,
+    isDayInMonth,
+    isWeekend,
     isSameMonth,
     isWeekInMonth,
   };

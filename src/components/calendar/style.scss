@@ -12,12 +12,31 @@
 }
 
 .ads-Calendar {
-  max-width: 360px;
-  > .ads-Calendar-weekDayNames {
-    @include column7;
-    > .ads-Calendar-weekDayName {
-      @include flexCentered;
-      text-transform: capitalize;
+  max-width: calc(40 * var(--grid));
+  > .ads-Calendar-header {
+    > .ads-Calendar-monthArea {
+      height: calc(5 * var(--grid));
+      display: grid;
+      grid-template-columns: 1fr 4fr 1fr;
+      > .ads-Calendar-currentMonth,
+      > .ads-Calendar-previousMonth,
+      > .ads-Calendar-nextMonth {
+        @include flexCentered;
+      }
+      > .ads-Calendar-currentMonth {
+        text-transform: capitalize;
+      }
+    }
+    > .ads-Calendar-weekDayNames {
+      height: calc(5 * var(--grid));
+      @include column7;
+      > .ads-Calendar-weekDayName {
+        @include flexCentered;
+        text-transform: capitalize;
+        &.ads-CalendarDay-weekDayName--weekendDay {
+          font-weight: bold;
+        }
+      }
     }
   }
 }

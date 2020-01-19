@@ -27,9 +27,12 @@ class Calendar extends PureComponent {
     return DateUtils.localization.getFormattedWeekdayInLocale(day, formatWeekDay, locale);
   };
   header = (date = this.state.date) => {
-    const { locale } = this.props;
+    const { locale, dateFormat } = this.props;
     const startOfWeek = DateUtils.getters.getStartOfWeek(date, locale);
-    const weekDayNames = range(7).map(offset => {
+    const localeObject = DateUtils.localization.getLocaleObject(locale);
+    const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
+    const modulus = 7;
+    const weekDayNames = range(modulus).map(offset => {
       const currentDay = DateUtils.addition.addDays(startOfWeek, offset);
       const weekDayName = this.formatWeekday(currentDay, locale);
       return (
@@ -41,6 +44,12 @@ class Calendar extends PureComponent {
               componentName: 'Calendar',
               descendentName: 'weekDayName',
             }),
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'CalendarDay',
+              descendentName: 'weekDayName',
+              modifierName: [0, modulus - 1].includes((offset + weekStartsOn) % modulus) ? 'weekendDay' : 'weekday',
+            })
           ])}
         >
           <Typography.Small>{weekDayName}</Typography.Small>
@@ -53,11 +62,60 @@ class Calendar extends PureComponent {
           SUIT.createComponentName({
             namespace: SUIT_PREFIX,
             componentName: 'Calendar',
-            descendentName: 'weekDayNames',
+            descendentName: 'header',
           }),
         ])}
       >
-        {weekDayNames}
+        <div
+          className={cx([
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'Calendar',
+              descendentName: 'monthArea',
+            }),
+          ])}
+        >
+          <div
+            className={cx([
+              SUIT.createComponentName({
+                namespace: SUIT_PREFIX,
+                componentName: 'Calendar',
+                descendentName: 'previousMonth',
+              }),
+            ])}
+          >←</div>
+          <div
+            className={cx([
+              SUIT.createComponentName({
+                namespace: SUIT_PREFIX,
+                componentName: 'Calendar',
+                descendentName: 'currentMonth',
+              }),
+            ])}
+          >
+            <Typography.Big>{DateUtils.format.formatDate(date, dateFormat, locale)}</Typography.Big>
+          </div>
+          <div
+            className={cx([
+              SUIT.createComponentName({
+                namespace: SUIT_PREFIX,
+                componentName: 'Calendar',
+                descendentName: 'nextMonth',
+              }),
+            ])}
+          >→</div>
+        </div>
+        <div
+          className={cx([
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'Calendar',
+              descendentName: 'weekDayNames',
+            }),
+          ])}
+        >
+          {weekDayNames}
+        </div>
       </div>
     );
   };

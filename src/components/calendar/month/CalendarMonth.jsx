@@ -18,7 +18,7 @@ class CalendarMonth extends PureComponent {
     let i = 0;
     let breakAfterNextPush = false;
     while (true) {
-      weeks.push(<CalendarWeek key={i} day={currentDay} locale={locale} format={format} />);
+      weeks.push(<CalendarWeek key={i} day={currentDay} month={DateUtils.getters.getMonth(day)} locale={locale} format={format} />);
       if (breakAfterNextPush) break;
       i++;
       currentDay = DateUtils.addition.addWeeks(currentDay, 1);
@@ -56,6 +56,6 @@ class CalendarMonth extends PureComponent {
 }
 
 export default withPropTypes({
-    propTypes,
-    defaultProps,
-  })(CalendarMonth);
+  propTypes,
+  defaultProps,
+})(CalendarMonth);
