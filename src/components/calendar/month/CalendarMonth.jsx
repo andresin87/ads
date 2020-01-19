@@ -18,7 +18,6 @@ class CalendarMonth extends PureComponent {
     let currentDay = DateUtils.getters.getStartOfMonth(day);
     let i = 0;
     let breakAfterNextPush = false;
-    debugger;
     while (true) {
       weeks.push(
         <ConnectedCalendarWeek
