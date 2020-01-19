@@ -1,0 +1,7 @@
+:root {
+  --calendar-h-row: calc(5 * var(--grid));
+  --calendar-w: calc(40 * var(--grid));
+  --calendar-h: calc(7 * var(--calendar-h-row));
+  --calendar-border-radius-shape-square: 0;
+  --calendar-border-radius-shape-circle: calc(5 * var(--grid) / 2);
+}

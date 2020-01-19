@@ -6,26 +6,24 @@ const CalendarContext = createContext({
   locale: undefined,
 });
 
-export const CalendarContextProvider = ({ selectedDay, locale, children }) => (
-  <CalendarContext.Provider value={{ selectedDay, locale }}>{children}</CalendarContext.Provider>
+export const CalendarContextProvider = ({ children, ...otherProps }) => (
+  <CalendarContext.Provider value={{ ...otherProps }}>{children}</CalendarContext.Provider>
 );
 
 export const CalendarContextConsumer = CalendarContext.Consumer;
 
 export const mapWithCalendarContextConsumer = (
-  propsMapper = props => props,
+  propsMapper = (contextProps, ownProps) => {
+    const { locale, ...otherContextProps } = contextProps;
+    return {
+      ...ownProps,
+      ...otherContextProps,
+      ...(ownProps.locale === undefined && { locale }),
+    };
+  },
 ) => Component => ownProps => (
   <CalendarContextConsumer>
-    {({ selectedDay, locale }) =>
-      React.createElement(
-        Component,
-        propsMapper({
-          ...ownProps,
-          selectedDay,
-          ...(ownProps.locale === undefined && { locale }),
-        }),
-      )
-    }
+    {contextProps => React.createElement(Component, propsMapper(contextProps, ownProps))}
   </CalendarContextConsumer>
 );
 

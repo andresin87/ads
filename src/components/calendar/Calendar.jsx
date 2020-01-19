@@ -13,7 +13,12 @@ import Typography from '../typography/Typography';
 
 import './style.scss';
 
-const { getDefaultLocale, registerLocale, setDefaultLocale, getLocaleName } = DateUtils.localization;
+const {
+  getDefaultLocale,
+  registerLocale,
+  setDefaultLocale,
+  getLocaleName,
+} = DateUtils.localization;
 
 class Calendar extends PureComponent {
   constructor(props) {
@@ -49,7 +54,9 @@ class Calendar extends PureComponent {
               namespace: SUIT_PREFIX,
               componentName: 'CalendarDay',
               descendentName: 'weekDayName',
-              modifierName: [0, modulus - 1].includes((offset + weekStartsOn) % modulus) ? 'weekendDay' : 'weekday',
+              modifierName: [0, modulus - 1].includes((offset + weekStartsOn) % modulus)
+                ? 'weekendDay'
+                : 'weekday',
             }),
           ])}
         >
@@ -84,6 +91,7 @@ class Calendar extends PureComponent {
                 descendentName: 'previousMonth',
               }),
             ])}
+            onClick={this.decreaseMonth}
           >
             ←
           </div>
@@ -106,6 +114,7 @@ class Calendar extends PureComponent {
                 descendentName: 'nextMonth',
               }),
             ])}
+            onClick={this.increaseMonth}
           >
             →
           </div>
@@ -124,11 +133,35 @@ class Calendar extends PureComponent {
       </div>
     );
   };
+  increaseMonth = () => {
+    this.setState(
+      ({ date }) => ({
+        date: DateUtils.addition.addMonths(date, 1),
+      }),
+      () => this.handleMonthChange(this.state.date),
+    );
+  };
+
+  decreaseMonth = () => {
+    this.setState(
+      ({ date }) => ({
+        date: DateUtils.substraction.subMonths(date, 1),
+      }),
+      () => this.handleMonthChange(this.state.date),
+    );
+  };
+
+  handleMonthChange = date => {
+    if (this.props.onMonthChange) {
+      this.props.onMonthChange(date);
+    }
+  };
+
   render() {
-    const { locale } = this.props;
+    const { locale, shape } = this.props;
     const { date } = this.state;
     return (
-      <CalendarContextProvider {...{ selectedDay: date, locale }}>
+      <CalendarContextProvider {...{ selectedDay: date, locale, shape }}>
         <div
           className={cx([
             SUIT.createComponentName({

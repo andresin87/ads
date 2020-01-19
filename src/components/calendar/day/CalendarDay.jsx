@@ -14,7 +14,7 @@ import './style.scss';
 class CalendarDay extends PureComponent {
   render() {
     const today = new Date();
-    const { className, day, month, locale, selectedDay } = this.props;
+    const { className, day, month, locale, selectedDay, shape } = this.props;
     const localeObject = DateUtils.localization.getLocaleObject(locale);
     const weekStartsOn = localeObject ? localeObject.options.weekStartsOn : 0;
     const modulus = 7;
@@ -30,6 +30,11 @@ class CalendarDay extends PureComponent {
             namespace: SUIT_PREFIX,
             componentName: 'CalendarDay',
             modifierName: DateUtils.comparators.isDayInMonth(day, month) ? 'proper' : 'foreign',
+          }),
+          SUIT.createComponentName({
+            namespace: SUIT_PREFIX,
+            componentName: 'CalendarDay',
+            modifierName: shape,
           }),
           DateUtils.comparators.isSameDay(today, day)
             ? SUIT.createComponentName({
@@ -47,10 +52,10 @@ class CalendarDay extends PureComponent {
           }),
           DateUtils.comparators.isSameDay(selectedDay, day)
             ? SUIT.createComponentName({
-              namespace: SUIT_PREFIX,
-              componentName: 'CalendarDay',
-              componentState: 'selected',
-            })
+                namespace: SUIT_PREFIX,
+                componentName: 'CalendarDay',
+                componentState: 'selected',
+              })
             : '',
           className,
         ])}
@@ -66,6 +71,15 @@ const CalendarDayTyped = withPropTypes({
   defaultProps,
 })(CalendarDay);
 
-export const ConnectedCalendarDay = mapWithCalendarContextConsumer()(CalendarDayTyped);
+export const ConnectedCalendarDay = mapWithCalendarContextConsumer(
+  ({ locale, selectedDay, shape }, ownProps) => {
+    return ({
+      ...ownProps,
+      ...(ownProps.locale === undefined && { locale }),
+      selectedDay,
+      shape,
+    })
+  },
+)(CalendarDayTyped);
 
 export default CalendarDayTyped;

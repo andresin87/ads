@@ -20,6 +20,7 @@ import addYears from 'date-fns/addYears';
 import toDate from 'date-fns/toDate';
 import parseISO from 'date-fns/parseISO';
 import isBefore from 'date-fns/isBefore';
+import subMonths from "date-fns/subMonths";
 
 // ** Date "Reflection" **
 const isValid = date => {
@@ -210,5 +211,9 @@ export default class DateUtils {
     addWeeks,
     addMonths,
     addYears,
+  };
+  // *** Substraction ***
+  static substraction = {
+    subMonths,
   };
 }

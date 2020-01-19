@@ -1,10 +1,30 @@
 @import '../style';
 
+@mixin shape-square() {
+  border-radius: var(--calendar-border-radius-shape-square);
+}
+@mixin shape-circle() {
+  border-radius: var(--calendar-border-radius-shape-circle);
+}
+
 .ads-CalendarDay {
   @include flexCentered;
   height: calc(5 * var(--grid));
-  &.ads-CalendarDay--proper {}
+  &.ads-CalendarDay--proper {
+  }
   &.ads-CalendarDay--foreign {
-    opacity: .7;
+    opacity: 0.2;
+  }
+  &.is-selected {
+    background-color: var(--c-primary);
+    .ads-Typography {
+      color: var(--c-white);
+    }
+  }
+  &.ads-CalendarDay--circle {
+    @include shape-circle;
+  }
+  &.ads-CalendarDay--square {
+    @include shape-square;
   }
 }

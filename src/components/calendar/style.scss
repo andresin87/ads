@@ -11,11 +11,19 @@
   align-content: center;
 }
 
+@mixin noselect() {
+  user-select: none;
+}
+
 .ads-Calendar {
-  max-width: calc(40 * var(--grid));
+  max-width: var(--calendar-w);
+  height: var(--calendar-h);
+  > * {
+    @include noselect;
+  }
   > .ads-Calendar-header {
     > .ads-Calendar-monthArea {
-      height: calc(5 * var(--grid));
+      height: var(--calendar-h-row);
       display: grid;
       grid-template-columns: 1fr 4fr 1fr;
       > .ads-Calendar-currentMonth,
@@ -28,7 +36,7 @@
       }
     }
     > .ads-Calendar-weekDayNames {
-      height: calc(5 * var(--grid));
+      height: var(--calendar-h-row);
       @include column7;
       > .ads-Calendar-weekDayName {
         @include flexCentered;
