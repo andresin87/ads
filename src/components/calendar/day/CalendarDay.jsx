@@ -6,6 +6,7 @@ import { SUIT_PREFIX } from '../../../constants';
 import withPropTypes from '../../../utils/withPropTypes';
 import { defaultProps, propTypes } from './CalendarDay.props';
 import DateUtils from '../utils/DateUtils';
+import { mapWithCalendarContextConsumer } from '../CalendarContext';
 import Typography from '../../typography/Typography';
 
 import './style.scss';
@@ -34,7 +35,11 @@ class CalendarDay extends PureComponent {
   }
 }
 
-export default withPropTypes({
+const CalendarDayTyped = withPropTypes({
   propTypes,
   defaultProps,
 })(CalendarDay);
+
+export const ConnectedCalendarDay = mapWithCalendarContextConsumer()(CalendarDayTyped);
+
+export default CalendarDayTyped;

@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
 import cx from 'classnames';
 
-import CalendarMonth from './month/CalendarMonth';
+import { ConnectedCalendarMonth } from './month/CalendarMonth';
 import DateUtils from './utils/DateUtils';
 import range from './utils/range';
 import SUIT from '../../utils/SUIT';
 import { defaultProps, propTypes } from './Calendar.props';
 import withPropTypes from '../../utils/withPropTypes';
+import { CalendarContextProvider } from './CalendarContext';
 import { SUIT_PREFIX } from '../../constants';
 import Typography from '../typography/Typography';
 
@@ -49,7 +50,7 @@ class Calendar extends PureComponent {
               componentName: 'CalendarDay',
               descendentName: 'weekDayName',
               modifierName: [0, modulus - 1].includes((offset + weekStartsOn) % modulus) ? 'weekendDay' : 'weekday',
-            })
+            }),
           ])}
         >
           <Typography.Small>{weekDayName}</Typography.Small>
@@ -83,7 +84,9 @@ class Calendar extends PureComponent {
                 descendentName: 'previousMonth',
               }),
             ])}
-          >←</div>
+          >
+            ←
+          </div>
           <div
             className={cx([
               SUIT.createComponentName({
@@ -103,7 +106,9 @@ class Calendar extends PureComponent {
                 descendentName: 'nextMonth',
               }),
             ])}
-          >→</div>
+          >
+            →
+          </div>
         </div>
         <div
           className={cx([
@@ -120,19 +125,22 @@ class Calendar extends PureComponent {
     );
   };
   render() {
-    const { day, locale } = this.props;
+    const { locale } = this.props;
+    const { date } = this.state;
     return (
-      <div
-        className={cx([
-          SUIT.createComponentName({
-            namespace: SUIT_PREFIX,
-            componentName: 'Calendar',
-          }),
-        ])}
-      >
-        {this.header()}
-        <CalendarMonth day={day} locale={locale} />
-      </div>
+      <CalendarContextProvider {...{ value: date, locale }}>
+        <div
+          className={cx([
+            SUIT.createComponentName({
+              namespace: SUIT_PREFIX,
+              componentName: 'Calendar',
+            }),
+          ])}
+        >
+          {this.header()}
+          <ConnectedCalendarMonth />
+        </div>
+      </CalendarContextProvider>
     );
   }
 }

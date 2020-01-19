@@ -5,7 +5,8 @@ import SUIT from '../../../utils/SUIT';
 import { SUIT_PREFIX } from '../../../constants';
 import withPropTypes from '../../../utils/withPropTypes';
 import { defaultProps, propTypes } from './CalendarMonth.props';
-import CalendarWeek from '../week/CalendarWeek';
+import { ConnectedCalendarWeek } from '../week/CalendarWeek';
+import { mapWithCalendarContextConsumer } from '../CalendarContext';
 import DateUtils from '../utils/DateUtils';
 
 import './style.scss';
@@ -17,8 +18,17 @@ class CalendarMonth extends PureComponent {
     let currentDay = DateUtils.getters.getStartOfMonth(day);
     let i = 0;
     let breakAfterNextPush = false;
+    debugger;
     while (true) {
-      weeks.push(<CalendarWeek key={i} day={currentDay} month={DateUtils.getters.getMonth(day)} locale={locale} format={format} />);
+      weeks.push(
+        <ConnectedCalendarWeek
+          key={i}
+          day={currentDay}
+          month={DateUtils.getters.getMonth(day)}
+          locale={locale}
+          format={format}
+        />,
+      );
       if (breakAfterNextPush) break;
       i++;
       currentDay = DateUtils.addition.addWeeks(currentDay, 1);
@@ -55,7 +65,11 @@ class CalendarMonth extends PureComponent {
   }
 }
 
-export default withPropTypes({
+const CalendarMonthTyped = withPropTypes({
   propTypes,
   defaultProps,
 })(CalendarMonth);
+
+export const ConnectedCalendarMonth = mapWithCalendarContextConsumer()(CalendarMonthTyped);
+
+export default CalendarMonthTyped;

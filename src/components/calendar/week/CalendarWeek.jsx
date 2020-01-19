@@ -4,12 +4,13 @@ import cx from 'classnames';
 import SUIT from '../../../utils/SUIT';
 import { SUIT_PREFIX } from '../../../constants';
 import DateUtils from '../utils/DateUtils';
-import CalendarDay from '../day/CalendarDay';
+import { ConnectedCalendarDay } from '../day/CalendarDay';
 import { defaultProps, propTypes } from './CalendarWeek.props';
 
 import './style.scss';
 import withPropTypes from '../../../utils/withPropTypes';
 import range from '../utils/range';
+import { mapWithCalendarContextConsumer } from '../CalendarContext';
 
 class CalendarWeek extends PureComponent {
   renderDays = () => {
@@ -21,7 +22,7 @@ class CalendarWeek extends PureComponent {
     return range(modus).map(offset => {
       const currentDay = DateUtils.addition.addDays(startOfWeek, offset);
       return (
-        <CalendarDay
+        <ConnectedCalendarDay
           key={offset}
           day={currentDay}
           month={month}
@@ -29,7 +30,9 @@ class CalendarWeek extends PureComponent {
             SUIT.createComponentName({
               namespace: SUIT_PREFIX,
               componentName: 'CalendarDay',
-              modifierName: [0, modus - 1].includes((offset + weekStartsOn) % modus) ? 'weekendDay' : 'weekDay',
+              modifierName: [0, modus - 1].includes((offset + weekStartsOn) % modus)
+                ? 'weekendDay'
+                : 'weekDay',
             }),
           ])}
         />
@@ -52,7 +55,11 @@ class CalendarWeek extends PureComponent {
   }
 }
 
-export default withPropTypes({
+const CalendarWeekTyped = withPropTypes({
   propTypes,
   defaultProps,
 })(CalendarWeek);
+
+export const ConnectedCalendarWeek = mapWithCalendarContextConsumer()(CalendarWeekTyped);
+
+export default CalendarWeekTyped;
