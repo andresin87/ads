@@ -30,11 +30,11 @@ These are the different characteristics of it:
 	- [ ] It must have a placeholder text "select a date"
 	- [ ] After date selection the input value has to show the selected date
 - Popover:
-	- [ ] It has to show 1 month at a time
-	- [ ] Arrows to navigate from one month to the other
-	- [ ] Days of the week from Sunday to Saturday
+	- [x] It has to show 1 month at a time
+	- [x] Arrows to navigate from one month to the other
+	- [x] Days of the week from Sunday to Saturday
 	- [ ] It's only possible to select one date at a time (no ranges are needed for this test)
-	- [ ] The number of rows will depend on the month, but the height of the popover must always be the same.
+	- [x] The number of rows will depend on the month, but the height of the popover must always be the same.
 
 ## Behaviour
 
@@ -61,9 +61,9 @@ The datepicker component would be used in many brands, and each of them should b
 	- [ ] Border: Only 2 options: none or solid 1px grey
 - Calendar
 	- [x] Font sizes: only 3 sizes available (S_12px M_14px or L_16px)
-	- [ ] Font colour: any color
-	- [ ] Background colour of each state: any color
-	- [/] Shape of the selected day indicator (only 2 options circle or square)
+	- [x] Font colour: any color
+	- [x] Background colour of each state: any color
+	- [x] Shape of the selected day indicator (only 2 options circle or square)
 
 **Important notes:**
 
