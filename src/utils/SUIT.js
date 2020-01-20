@@ -34,7 +34,10 @@ export default class SUIT {
       condionalAddition(namespace !== undefined, `${namespace}${SUIT.#VAR_JOIN}`),
       `${componentName}`,
       condionalAddition(descendentName !== undefined, `${SUIT.#VAR_JOIN}${descendentName}`),
-      condionalAddition(modifierName !== undefined, `${SUIT.#VAR_JOIN}${SUIT.#VAR_JOIN}${modifierName}`),
+      condionalAddition(
+        modifierName !== undefined,
+        `${SUIT.#VAR_JOIN}${SUIT.#VAR_JOIN}${modifierName}`,
+      ),
     ].join('');
   }
 }

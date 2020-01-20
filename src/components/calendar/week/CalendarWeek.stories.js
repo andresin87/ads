@@ -1,7 +1,7 @@
 import React from 'react';
 import CalendarWeek from './CalendarWeek';
 import { getLocaleName, registerLocale } from '../Calendar';
-import localeES from "date-fns/locale/es";
+import localeES from 'date-fns/locale/es';
 
 export default {
   title: 'ADS|Molecule/Calendar.Week',

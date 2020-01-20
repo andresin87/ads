@@ -33,7 +33,7 @@ These are the different characteristics of it:
 	- [x] It has to show 1 month at a time
 	- [x] Arrows to navigate from one month to the other
 	- [x] Days of the week from Sunday to Saturday
-	- [ ] It's only possible to select one date at a time (no ranges are needed for this test)
+	- [x] It's only possible to select one date at a time (no ranges are needed for this test)
 	- [x] The number of rows will depend on the month, but the height of the popover must always be the same.
 
 ## Behaviour

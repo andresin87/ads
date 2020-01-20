@@ -16,7 +16,11 @@ export const standard = () => <Typography>Typography</Typography>;
 export const knobs = () => (
   <Typography
     htmlElement={text('htmlElement', 'span')}
-    tone={select('tone', [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'], undefined)}
+    tone={select(
+      'tone',
+      [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'],
+      undefined,
+    )}
   >
     {text('children', 'children')}
   </Typography>

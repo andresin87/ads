@@ -20,7 +20,11 @@ export const knobs = () => (
     name={text('name', 'input')}
     placeholder={text('placeholder', 'placeholder')}
     sublabel={text('sublabel', 'sublabel')}
-    tone={select('tone', [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'], undefined)}
+    tone={select(
+      'tone',
+      [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'],
+      undefined,
+    )}
     value={text('value', 'value')}
   />
 );

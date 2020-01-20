@@ -9,7 +9,18 @@ import { defaultProps, propTypes } from './Field.props';
 
 import './style.scss';
 
-const Field = ({ className, disabled, elementName, id, label, name, tone, sublabel, children, ...otherProps }) => (
+const Field = ({
+  className,
+  disabled,
+  elementName,
+  id,
+  label,
+  name,
+  tone,
+  sublabel,
+  children,
+  ...otherProps
+}) => (
   <div
     {...{
       className: cx([

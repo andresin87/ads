@@ -14,7 +14,9 @@ class Theme extends PureComponent {
   }
 
   updateCSSVariables() {
-    Object.entries(this.props.variables).forEach(([prop, value]) => this.node.current.style.setProperty(prop, value));
+    Object.entries(this.props.variables).forEach(([prop, value]) =>
+      this.node.current.style.setProperty(prop, value),
+    );
   }
 
   render() {

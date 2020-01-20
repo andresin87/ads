@@ -1,5 +1,5 @@
 import React from 'react';
-import localeES from "date-fns/locale/es";
+import localeES from 'date-fns/locale/es';
 
 import Calendar, { registerLocale, getLocaleName } from './Calendar';
 
@@ -12,7 +12,7 @@ export default {
 };
 
 export const standard = () => {
-  return  <Calendar />;
+  return <Calendar />;
 };
 
 export const locale = () => {
