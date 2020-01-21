@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef} from 'react';
 
 import { propTypes, defaultProps } from './Input.props';
 
@@ -7,7 +7,7 @@ import withField from '../field/withField';
 
 import './style.scss';
 
-const Input = props => <input aria-label={props.name} {...props} />;
+const Input = forwardRef((props, ref) => <input ref={ref} aria-label={props.name} {...props} />);
 
 export default withField(
   withPropTypes({

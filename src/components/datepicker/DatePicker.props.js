@@ -41,9 +41,40 @@ export const propTypes = {
    * The input is a controlled component, and will always display this value.
    */
   value: PropTypes.instanceOf(Date),
+
+  /**
+   * The locale configuration of the user
+   */
+  locale: PropTypes.oneOfType([PropTypes.string, PropTypes.shape({ locale: PropTypes.object })]),
+  /**
+   * the format of the dates given and returned
+   * default: 'dd/MM/YYYY'
+   */
+  dateFormat: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
+  /**
+   *  The format of the Week days
+   */
+  formatWeekDay: PropTypes.func,
+  /**
+   * The shape of the marked days
+   */
+  shape: PropTypes.oneOf(['circle', 'square']).isRequired,
+  /**
+   * Triggered every time the calendar changes the visible month if function value is given.
+   */
+  onMonthChange: PropTypes.func,
+  /**
+   * delay of the opening transitions.
+   */
+  transitionDuration: PropTypes.number,
 };
 
 export const defaultProps = {
+  transitionDuration: 500,
+  dateFormat: 'LLLL yyyy',
   name: '',
-  placeholder: 'select a date'
+  placeholder: 'select a date',
+  format: 'dd/MM/yyyy',
+  formatWeekDay: (day = '') => day.substring(0, 3),
+  shape: 'square',
 };

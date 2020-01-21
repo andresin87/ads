@@ -158,8 +158,8 @@ class Calendar extends PureComponent {
 
   handleOnClick = date => {
     this.setState({ date }, () => {
-      if (this.props.handleOnClick) {
-        this.props.handleOnClick(date);
+      if (this.props.onClick) {
+        this.props.onClick(date);
       }
     });
   };

@@ -1,6 +1,6 @@
 :root {
   --calendar-h-row: calc(5 * var(--grid));
-  --calendar-w: calc(40 * var(--grid));
+  --calendar-w: calc(35 * var(--grid));
   --calendar-h: calc(8 * var(--calendar-h-row));
   --calendar-fc: var(--c-text-base); // calendar font color
   --calendar-fc-selected: var(--c-dark-white); // calendar font color selected

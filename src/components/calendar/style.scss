@@ -16,7 +16,7 @@
 }
 
 .ads-Calendar {
-  max-width: var(--calendar-w);
+  width: var(--calendar-w);
   height: var(--calendar-h);
   > * {
     @include noselect;

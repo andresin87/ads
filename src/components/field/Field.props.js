@@ -25,6 +25,10 @@ export const propTypes = {
    * This label appears beyond the field.
    */
   sublabel: PropTypes.string,
+  /**
+   *  the mode of the inner element
+   */
+  tone: PropTypes.oneOfType([undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'])
 };
 
 export const defaultProps = {

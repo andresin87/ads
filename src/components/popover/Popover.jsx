@@ -1,49 +1,41 @@
-import React, { Component, useEffect } from 'react';
-import Target from './target/Target';
-import Content from './content/Content';
-import { Provider, Consumer } from './context';
+import React, { cloneElement } from 'react';
+import cx from 'classnames';
+import MUIPopover from '@material-ui/core/Popover';
+
 import withPropTypes from '../../utils/withPropTypes';
 import { defaultProps, propTypes } from './Popover.props';
+import SUIT from '../../utils/SUIT';
+import { SUIT_PREFIX } from '../../constants';
 
-class Popover extends Component {
-  static Target = Target;
-  static Content = Content;
+import './style.scss';
 
-  state = {
-    placement: this.props.placement,
-    showPopover: false,
-    targetNode: null,
-  };
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.placement !== prevState.placement) {
-      return { placement: nextProps.placement };
-    }
-
-    return null;
-  }
-
-  setTargetNode = node => {
-    debugger;
-    this.setState({ targetNode: node });
-  };
-
-  showPopover = () => this.setState({ showPopover: true });
-
-  hidePopover = () => this.setState({ showPopover: false });
-
-  render() {
-    const context = {
-      showPopover: this.state.showPopover,
-      placement: this.state.placement,
-      targetNode: this.state.targetNode,
-      setTargetNode: this.setTargetNode,
-      onMouseEnterOnTarget: this.showPopover,
-      onMouseLeaveFromTarget: this.hidePopover,
-    };
-    return <Provider value={context}>{this.props.children}</Provider>;
-  }
-}
+const Popover = props => (
+  <div
+    className={cx([
+      SUIT.createComponentName({
+        namespace: SUIT_PREFIX,
+        componentName: 'Popover',
+      }),
+      props.className,
+    ])}
+  >
+    <MUIPopover {...props}>
+      <div
+        className={cx([
+          SUIT.createComponentName({
+            namespace: SUIT_PREFIX,
+            componentName: 'Popover',
+            descendentName: 'inner',
+          }),
+        ])}
+      >
+        {cloneElement(props.children, {
+          ...props.children.props,
+        })}
+      </div>
+    </MUIPopover>
+  </div>
+);
 
 export default withPropTypes({
   propTypes,

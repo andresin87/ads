@@ -28,7 +28,7 @@ These are the different characteristics of it:
 
 - Form field:
 	- [x] It must have a placeholder text "select a date"
-	- [ ] After date selection the input value has to show the selected date
+	- [x] After date selection the input value has to show the selected date
 - Popover:
 	- [x] It has to show 1 month at a time
 	- [x] Arrows to navigate from one month to the other
@@ -38,11 +38,11 @@ These are the different characteristics of it:
 
 ## Behaviour
 
-- [ ] The popover with the calendar must be initially closed.
-- [ ] In order to show the calendar, the user has to click on the text field.
-- [ ] Once a date is selected the calendar has to hide (little delay of 0.5s).
-- [ ] The date selected must be shown in the field.
-- [ ] To change the month, the user has to click on the arrows on top right and left.
+- [x] The popover with the calendar must be initially closed.
+- [x] In order to show the calendar, the user has to click on the text field.
+- [x] Once a date is selected the calendar has to hide (little delay of 0.5s).
+- [x] The date selected must be shown in the field.
+- [x] To change the month, the user has to click on the arrows on top right and left.
 - [x] The dates can't be added manually in the form-field.
 
 ## Customisation

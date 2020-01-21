@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 
 export const propTypes = {
-  placement: PropTypes.oneOf(['top', 'left', 'bottom', 'right']),
-  children: PropTypes.node.isRequired,
+  /**
+   * Time in milliseconds to wait before showing and hiding the tooltip. Defaults to 500.
+   */
+  transitionDuration: PropTypes.number,
 };
 
 export const defaultProps = {
-  placement: 'bottom',
+  transitionDuration: 500
 };

@@ -1,7 +1,7 @@
 import React from 'react';
-import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 
 import DatePicker from './DatePicker';
+import { select, text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
   title: 'ADS|Molecule/DatePicker',
@@ -11,21 +11,19 @@ export default {
   },
 };
 
-export const standard = () => <DatePicker name="input" />;
+export const standard = () => <DatePicker name="datepicker" />;
 
 export const knobs = () => (
   <DatePicker
-    disabled={boolean('disabled', false)}
+    name="datepicker"
     label={text('label', 'label')}
-    name={text('name', 'input')}
-    placeholder={text('placeholder', 'placeholder')}
     sublabel={text('sublabel', 'sublabel')}
     tone={select(
       'tone',
       [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'],
       undefined,
     )}
-    value={text('value', 'value')}
+    format={select('format', DatePicker.formats, DatePicker.formats.readable)}
   />
 );
 

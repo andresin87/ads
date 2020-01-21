@@ -4,7 +4,7 @@ export const propTypes = {
   /**
    * The calendar day value
    */
-  day: PropTypes.instanceOf(Date).isRequired,
+  day: PropTypes.instanceOf(Date),
   /**
    *
    */
@@ -38,7 +38,7 @@ export const propTypes = {
 export const defaultProps = {
   dateFormat: 'LLLL yyyy',
   day: new Date(),
-  format: 'yyyy-MM-dd',
+  format: 'yyyy/MM/dd',
   formatWeekDay: (day = '') => day.substring(0, 3),
   shape: 'square',
 };
