@@ -45,4 +45,5 @@ export const propTypes = {
 
 export const defaultProps = {
   name: '',
+  placeholder: 'select a date'
 };

@@ -10,10 +10,10 @@
     font-size: 0.8em;
     position: absolute;
     height: calc(2 * var(--grid));
+    left: calc(2 * var(--grid));
+    right: calc(2 * var(--grid));
     line-height: 1.5;
   }
-  > .ads-Field-label,
-  > .ads-Field-subLabel,
   > .ads-Field-element {
     left: var(--grid);
     right: var(--grid);
@@ -25,7 +25,7 @@
     position: absolute;
     top: calc(2 * var(--grid));
     bottom: calc(2 * var(--grid));
-    width: calc(100% - 2 * var(--grid));
+    width: calc(100% - 4 * var(--grid));
   }
   > .ads-Field-subLabel {
     bottom: 0;

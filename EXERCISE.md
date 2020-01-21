@@ -27,7 +27,7 @@ It's made of 2 parts:
 These are the different characteristics of it:
 
 - Form field:
-	- [ ] It must have a placeholder text "select a date"
+	- [x] It must have a placeholder text "select a date"
 	- [ ] After date selection the input value has to show the selected date
 - Popover:
 	- [x] It has to show 1 month at a time
@@ -43,7 +43,7 @@ These are the different characteristics of it:
 - [ ] Once a date is selected the calendar has to hide (little delay of 0.5s).
 - [ ] The date selected must be shown in the field.
 - [ ] To change the month, the user has to click on the arrows on top right and left.
-- [ ] The dates can't be added manually in the form-field.
+- [x] The dates can't be added manually in the form-field.
 
 ## Customisation
 
@@ -51,10 +51,10 @@ The datepicker component would be used in many brands, and each of them should b
 
 - Form field:
 	- [ ] Date format to be shown after selection: 2 options only
-	- [ ] Colour and width of the border: Only 2 options: none or solid 1px grey
-	- [ ] Background color: any colour is valid
+	- [x] Colour and width of the border: Only 2 options: none or solid 1px grey
+	- [x] Background color: any colour is valid
 	- [x] Font size: only 3 sizes available (S_12px M_14px or L_16px)
-	- [ ] Font colour: any color
+	- [x] Font colour: any color
 - Popover:
 	- [ ] Shadow: any valid CSS value is allowed
 	- [ ] Background color: any colour is valid
@@ -67,10 +67,10 @@ The datepicker component would be used in many brands, and each of them should b
 
 **Important notes:**
 
-- You can use any icon for the arrows
-- We don't define responsive behaviour, but it should work well in Mobile as well
-- The spacing should be based on 8px grid
-- The component should be easy to use in brands with different styles.
+- [x] You can use any icon for the arrows
+- [x] We don't define responsive behaviour, but it should work well in Mobile as well
+- [x] The spacing should be based on 8px grid
+- [x] The component should be easy to use in brands with different styles.
 
 ## Default visual style
 

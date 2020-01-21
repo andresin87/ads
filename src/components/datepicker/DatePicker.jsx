@@ -8,7 +8,13 @@ import Calendar from '../calendar/Calendar';
 
 const DatePicker = props => (
   <>
-    <Input disabled aria-label={props.name} type="date" {...props} />
+    <Input
+      aria-label={props.name}
+      type="text"
+      {
+      ...props
+      }
+      disabled />
     <Calendar />
   </>
 );

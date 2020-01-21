@@ -10,3 +10,4 @@
 - a11y
 - Context API.
 - High Order Components && High Order Functions && HOF(HOC).
+- Ref uses
