@@ -13,9 +13,15 @@ addParameters({
     // Override the default dark theme
     dark: { ...themes.dark },
     // Override the default light theme
-    light: { ...themes.normal }
-  }
+    light: { ...themes.normal },
+  },
 });
 
 // automatically import all files ending in *.stories.js
-configure(require.context('../src', true, /\.stories\.js$/), module);
+configure(
+  [
+    require.context('../src', true, /\.stories\.mdx$/),
+    require.context('../src', true, /\.stories\.js$/),
+  ],
+  module,
+);

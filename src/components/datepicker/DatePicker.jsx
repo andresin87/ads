@@ -113,6 +113,9 @@ class DatePicker extends PureComponent {
 
 DatePicker.formats = { inverse: 'yyyy/MM/dd', readable: 'dd/MM/yyyy' };
 
+/**
+ * Use datepicker as an input for date values
+ */
 export default withPropTypes({
   propTypes,
   defaultProps,

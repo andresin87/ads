@@ -8,6 +8,7 @@ export default {
 
   parameters: {
     component: DatePicker,
+    componentSubtitle: 'Displays a date picker field',
   },
 };
 

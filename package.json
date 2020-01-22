@@ -15,13 +15,15 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
+    "clean": "rm -rf ./dist",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "prettier": "prettier --config .prettierrc --write '{{src,test},__{tests,mocks}__}/**/*.{js,jsx}'"
+    "build-storybook": "yarn run clean && build-storybook -s public -o dist",
+    "prettier": "prettier --config .prettierrc --write '{{src,test},__{tests,mocks}__}/**/*.{js,jsx}'",
+    "deploy": "yarn run build-storybook && gh-pages -d dist && yarn run clean"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,18 +43,21 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^5.3.3",
     "@storybook/addon-actions": "^5.3.3",
+    "@storybook/addon-docs": "^5.3.8",
     "@storybook/addon-knobs": "^5.3.3",
     "@storybook/addon-links": "^5.3.3",
     "@storybook/addon-storysource": "^5.3.3",
     "@storybook/addon-viewport": "^5.3.3",
     "@storybook/addons": "^5.3.3",
     "@storybook/preset-create-react-app": "^1.5.1",
+    "@storybook/preset-scss": "^1.0.2",
     "@storybook/react": "^5.3.3",
     "css-loader": "^3.4.2",
+    "gh-pages": "^2.2.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "storybook-dark-mode": "^0.2.0",
-    "style-loader": "^1.1.2"
+    "style-loader": "^1.1.3"
   }
 }

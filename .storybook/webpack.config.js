@@ -10,7 +10,20 @@ module.exports = function({ config }) {
     {
       test: /\.s[ac]ss$/,
       include: [path.resolve(__dirname, './src/')],
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: [
+        {
+          loader: 'style-loader',
+        },
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            javascriptEnabled: true,
+          },
+        },
+      ],
     },
   );
 

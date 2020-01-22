@@ -1,9 +1,7 @@
 import React, { createElement } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { propTypes, defaultProps } from './Typography.props';
-
-import withPropTypes from '../../utils/withPropTypes';
 import SUIT from '../../utils/SUIT';
 import { SUIT_PREFIX } from '../../constants';
 
@@ -69,7 +67,23 @@ Typography.S = Typography.createType('s');
 Typography.Small = Typography.createType('small');
 Typography.Q = Typography.createType('q');
 
-export default withPropTypes({
-  propTypes,
-  defaultProps,
-})(Typography);
+Typography.propTypes = {
+  /**
+   * The mode of the text
+   */
+  tone: PropTypes.oneOf([
+    'default',
+    'primary',
+    'secondary',
+    'warning',
+    'danger',
+    'info',
+    'success',
+  ]),
+};
+
+Typography.defaultProps = {
+  tone: undefined,
+};
+
+export default Typography;
