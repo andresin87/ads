@@ -1,5 +1,4 @@
 .ads-Field {
-  width: 100%;
   position: relative;
   padding: var(--grid);
   display: flex;
@@ -11,8 +10,8 @@
     font-size: 0.8em;
     position: absolute;
     height: calc(2 * var(--grid));
-    left: calc(2 * var(--grid));
-    right: calc(2 * var(--grid));
+    // left: calc(2 * var(--grid));
+    // right: calc(2 * var(--grid));
     line-height: 1.5;
   }
   > .ads-Field-element {

@@ -1,9 +1,9 @@
 :root {
   --input-padding: var(--grid);
   --input-border-radius: 0;
-  --input-border-color: var(--c-black);
-  --input-border-width: 0;
+  --input-border-color: var(--c-light-gray);
+  --input-border-width: 1px;
   --input-border-style: solid;
   --input-background-color: transparent;
-  --input-color: var(--c-black);
+  --input-color: var(--c-system);
 }

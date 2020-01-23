@@ -19,7 +19,7 @@ const Popover = props => (
       props.className,
     ])}
   >
-    <MUIPopover {...props}>
+    <MUIPopover elevation={0} {...props}>
       <div
         className={cx([
           SUIT.createComponentName({

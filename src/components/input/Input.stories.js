@@ -4,7 +4,7 @@ import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import Input from './Input';
 
 export default {
-  title: 'ADS|Atom/Input',
+  title: 'Adevinta-DS|Atom/Input',
 
   parameters: {
     component: Input,

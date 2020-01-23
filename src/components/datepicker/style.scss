@@ -4,3 +4,14 @@
     text-shadow: 0 0 0 var(--datepicker-input-text-color);
   }
 }
+.ads-DatePicker-popover {
+  color: red;
+  > .MuiPaper-root.MuiPopover-paper {
+    box-shadow: var(--popover-box-shadow);
+    background-color: var(--popover-background-color);
+    border-radius: var(--popover-border-radius);
+    border-color: var(--popover-border-color);
+    border-width: var(--popover-border-width);
+    border-style: var(--popover-border-style);
+  }
+}

@@ -5,7 +5,7 @@ import CalendarMonth from './CalendarMonth';
 import { getLocaleName, registerLocale } from '../Calendar';
 
 export default {
-  title: 'ADS|Molecule/Calendar.Month',
+  title: 'Adevinta-DS|Molecule/Calendar.Month',
 
   parameters: {
     component: CalendarMonth,

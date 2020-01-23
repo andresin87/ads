@@ -4,7 +4,7 @@ import DatePicker from './DatePicker';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
-  title: 'ADS|Molecule/DatePicker',
+  title: 'Adevinta-DS|Molecule/DatePicker',
 
   parameters: {
     component: DatePicker,

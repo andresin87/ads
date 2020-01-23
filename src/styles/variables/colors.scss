@@ -75,16 +75,34 @@
   --c-gray: hsl(var(--c-gray-hue), var(--c-gray-sat), var(--c-gray-light));
 
   // Gray color light gradients
-  --c-gray-light-1: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) - var(--lighter1)), calc(var(--c-gray-light) + var(--lighter1)));
-  --c-gray-light-2: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) - var(--lighter2)), calc(var(--c-gray-light) + var(--lighter2)));
-  --c-gray-light-3: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) - var(--lighter3)), calc(var(--c-gray-light) + var(--lighter3)));
-  --c-gray-light-4: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) - var(--lighter4)), calc(var(--c-gray-light) + var(--lighter4)));
+  --c-gray-light-1: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) + calc(var(--lighter1) * 1.5)));
+  --c-gray-light-2: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) + calc(var(--lighter2) * 1.5)));
+  --c-gray-light-3: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) + calc(var(--lighter3) * 1.5)));
+  --c-gray-light-4: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) + calc(var(--lighter4) * 1.5)));
 
   // Gray color dark gradients
-  --c-gray-dark-1: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) + var(--darker1)), calc(var(--c-gray-light) - var(--lighter1)));
-  --c-gray-dark-2: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) + var(--darker2)), calc(var(--c-gray-light) - var(--lighter2)));
-  --c-gray-dark-3: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) + var(--darker3)), calc(var(--c-gray-light) - var(--lighter3)));
-  --c-gray-dark-4: hsl(var(--c-gray-hue), calc(var(--c-gray-sat) + var(--darker4)), calc(var(--c-gray-light) - var(--lighter4)));
+  --c-gray-dark-1: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) - calc(var(--lighter1) * 1.5)));
+  --c-gray-dark-2: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) - calc(var(--lighter2) * 1.5)));
+  --c-gray-dark-3: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) - calc(var(--lighter3) * 1.5)));
+  --c-gray-dark-4: hsl(var(--c-gray-hue), var(--c-gray-sat), calc(var(--c-gray-light) - calc(var(--lighter4) * 1.5)));
+
+  // Light-Gray color
+  --c-light-gray-hue: 0;
+  --c-light-gray-sat: 0%;
+  --c-light-gray-light: 90%;
+  --c-light-gray: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), var(--c-light-gray-light));
+
+  // Light-Gray color light gradients
+  --c-light-gray-light-1: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) + 2.5%));
+  --c-light-gray-light-2: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) + 5%));
+  --c-light-gray-light-3: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) + 7.5%));
+  --c-light-gray-light-4: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) + 10%));
+
+  // Light-Gray color dark gradients
+  --c-light-gray-dark-1: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) - 2.5%));
+  --c-light-gray-dark-2: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) - 5%));
+  --c-light-gray-dark-3: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) - 7.5%));
+  --c-light-gray-dark-4: hsl(var(--c-light-gray-hue), var(--c-light-gray-sat), calc(var(--c-light-gray-light) - 10%));
 
   // Success color
   --c-success-hue: 145;
@@ -123,6 +141,24 @@
   --c-alert-dark-2: hsl(var(--c-alert-hue), calc(var(--c-alert-sat) + var(--darker2)), calc(var(--c-alert-light) - var(--lighter2)));
   --c-alert-dark-3: hsl(var(--c-alert-hue), calc(var(--c-alert-sat) + var(--darker3)), calc(var(--c-alert-light) - var(--lighter3)));
   --c-alert-dark-4: hsl(var(--c-alert-hue), calc(var(--c-alert-sat) + var(--darker4)), calc(var(--c-alert-light) - var(--lighter4)));
+
+  // Info color
+  --c-info-hue: 214;
+  --c-info-sat: 61%;
+  --c-info-light: 42%;
+  --c-info: hsl(var(--c-info-hue), var(--c-info-sat), var(--c-info-light));
+
+  // Info color light gradients
+  --c-info-light-1: hsl(var(--c-info-hue), calc(var(--c-info-sat) - var(--lighter1)), calc(var(--c-info-light) + var(--lighter1)));
+  --c-info-light-2: hsl(var(--c-info-hue), calc(var(--c-info-sat) - var(--lighter2)), calc(var(--c-info-light) + var(--lighter2)));
+  --c-info-light-3: hsl(var(--c-info-hue), calc(var(--c-info-sat) - var(--lighter3)), calc(var(--c-info-light) + var(--lighter3)));
+  --c-info-light-4: hsl(var(--c-info-hue), calc(var(--c-info-sat) - var(--lighter4)), calc(var(--c-info-light) + var(--lighter4)));
+
+  // Info color dark gradients
+  --c-info-dark-1: hsl(var(--c-info-hue), calc(var(--c-info-sat) + var(--darker1)), calc(var(--c-info-light) - var(--lighter1)));
+  --c-info-dark-2: hsl(var(--c-info-hue), calc(var(--c-info-sat) + var(--darker2)), calc(var(--c-info-light) - var(--lighter2)));
+  --c-info-dark-3: hsl(var(--c-info-hue), calc(var(--c-info-sat) + var(--darker3)), calc(var(--c-info-light) - var(--lighter3)));
+  --c-info-dark-4: hsl(var(--c-info-hue), calc(var(--c-info-sat) + var(--darker4)), calc(var(--c-info-light) - var(--lighter4)));
 
   // Error color
   --c-error-hue: 359;

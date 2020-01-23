@@ -4,7 +4,7 @@ import { withKnobs, select, text } from '@storybook/addon-knobs';
 import Typography from './Typography';
 
 export default {
-  title: 'ADS|Atom/Typography',
+  title: 'Adevinta-DS|Atom/Typography',
 
   parameters: {
     component: Typography,

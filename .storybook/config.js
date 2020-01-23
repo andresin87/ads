@@ -17,7 +17,7 @@ addParameters({
   },
 });
 
-// automatically import all files ending in *.stories.js
+// automatically import all files ending in *.stories.(md|js)(x)
 configure(
   [
     require.context('../src', true, /\.stories\.mdx$/),

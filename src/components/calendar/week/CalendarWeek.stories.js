@@ -4,7 +4,7 @@ import { getLocaleName, registerLocale } from '../Calendar';
 import localeES from 'date-fns/locale/es';
 
 export default {
-  title: 'ADS|Molecule/Calendar.Week',
+  title: 'Adevinta-DS|Molecule/Calendar.Week',
 
   parameters: {
     component: null,

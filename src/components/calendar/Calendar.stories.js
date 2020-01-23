@@ -4,7 +4,7 @@ import localeES from 'date-fns/locale/es';
 import Calendar, { registerLocale, getLocaleName } from './Calendar';
 
 export default {
-  title: 'ADS|Molecule/Calendar',
+  title: 'Adevinta-DS|Molecule/Calendar',
 
   parameters: {
     component: null,

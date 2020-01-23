@@ -50,15 +50,15 @@ These are the different characteristics of it:
 The datepicker component would be used in many brands, and each of them should be able to customise the following:
 
 - Form field:
-	- [ ] Date format to be shown after selection: 2 options only
+	- [x] Date format to be shown after selection: 2 options only
 	- [x] Colour and width of the border: Only 2 options: none or solid 1px grey
 	- [x] Background color: any colour is valid
 	- [x] Font size: only 3 sizes available (S_12px M_14px or L_16px)
 	- [x] Font colour: any color
 - Popover:
-	- [ ] Shadow: any valid CSS value is allowed
-	- [ ] Background color: any colour is valid
-	- [ ] Border: Only 2 options: none or solid 1px grey
+	- [x] Shadow: any valid CSS value is allowed
+	- [x] Background color: any colour is valid
+	- [x] Border: Only 2 options: none or solid 1px grey
 - Calendar
 	- [x] Font sizes: only 3 sizes available (S_12px M_14px or L_16px)
 	- [x] Font colour: any color

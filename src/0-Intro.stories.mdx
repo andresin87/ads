@@ -1,0 +1,51 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+ <Meta title="Adevinta-DS|Intro" />
+
+ # Get started
+
+ Adevinta Design System is a reusable component library that helps Storybook contributors build UIs faster. The goal is to make building durable UIs more productive and satisfying.
+
+ ### **Use**
+
+ Import components you want into your UI
+
+ `import { Typography } from ‘@andresin87/ads’;`
+
+ and use them like so
+
+ ```
+   const example = () => (
+     <Typography>
+       Hello world
+     </div>
+   )
+ ```
+
+ ### **Browse ADS components in your own Storybook**
+
+ Once you add the package, update your .storybook/config.js to import all files ending in .stories.js.
+
+ ```
+   import { configure } from '@storybook/react';
+   configure(require.context('../src', true, /.stories.js$/), module);
+ ```
+
+ ### **Run and develop ADS locally**
+
+ Clone the [ADS GitHub project](https://github.com/andresin87/ads) then start Storybook.
+
+ `yarn && yarn run storybook`
+
+ ## Used by
+
+ - [Storybook homepage](https://storybook.js.org/)
+ - [LearnStorybook.com](https://www.learnstorybook.com/)
+
+ Note: this package is not used in Storybook's UI, but the visual design is identical.
+
+ ### **Resources**
+
+ - [Introducing Storybook Design System](https://medium.com/storybookjs/introducing-storybook-design-system-23fd9b1ac3c0)
+ - [GitHub repository](https://github.com/storybookjs/design-system)
+ - [ADS repository](https://github.com/andresin87/ads)
