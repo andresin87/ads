@@ -3,7 +3,7 @@ import React from 'react';
 import DatePicker from './DatePicker';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 import Calendar, { getLocaleName, registerLocale } from '../calendar/Calendar';
-import localeES from "date-fns/locale/es";
+import localeES from 'date-fns/locale/es';
 
 export default {
   title: 'Adevinta-DS|Molecule/DatePicker',
@@ -31,11 +31,12 @@ export const knobs = () => {
         [undefined, 'default', 'primary', 'secondary', 'warning', 'danger', 'info', 'success'],
         undefined,
       )}
+      shape={select('shape', ['circle', 'square'], 'circle')}
       format={select('format', DatePicker.formats, DatePicker.formats.readable)}
       locale={select('locale', [undefined, localeName], undefined)}
     />
   );
-}
+};
 
 knobs.story = {
   decorators: [withKnobs],

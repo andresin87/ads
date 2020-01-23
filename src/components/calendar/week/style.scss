@@ -2,4 +2,5 @@
 
 .ads-CalendarWeek {
   @include column7;
+  background-color: var(--calendar-bc);
 }

@@ -15,7 +15,7 @@
   &.ads-CalendarDay--proper {
   }
   &.ads-CalendarDay--foreign {
-    opacity: 0.2;
+    background-color: var(--c-light-gray-light-4);
   }
   &.is-selected {
     background-color: var(--calendar-bc-selected);

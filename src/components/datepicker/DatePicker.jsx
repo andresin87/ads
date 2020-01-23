@@ -55,6 +55,7 @@ class DatePicker extends PureComponent {
       label,
       sublabel,
       tone,
+      shape,
     } = this.props;
     const { anchorEl, value } = this.state;
     const open = Boolean(anchorEl);
@@ -109,6 +110,7 @@ class DatePicker extends PureComponent {
             day={value}
             onClick={this.handleSelect}
             locale={locale}
+            shape={shape}
           />
         </Popover>
       </div>
