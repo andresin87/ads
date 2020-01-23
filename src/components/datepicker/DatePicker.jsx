@@ -104,7 +104,12 @@ class DatePicker extends PureComponent {
           }}
           onClose={this.handleClose}
         >
-          <Calendar onMonthChange={onMonthChange} day={value} onClick={this.handleSelect} />
+          <Calendar
+            onMonthChange={onMonthChange}
+            day={value}
+            onClick={this.handleSelect}
+            locale={locale}
+          />
         </Popover>
       </div>
     );
